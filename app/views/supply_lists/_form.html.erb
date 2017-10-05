@@ -1,0 +1,22 @@
+<%= form_with(model: supply_list, local: true) do |form| %>
+  <% if supply_list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(supply_list.errors.count, "error") %> prohibited this supply_list from being saved:</h2>
+
+      <ul>
+      <% supply_list.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :item_name %>
+    <%= form.text_field :item_name, id: :supply_list_item_name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

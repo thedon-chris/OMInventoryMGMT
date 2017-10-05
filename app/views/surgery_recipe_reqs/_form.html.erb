@@ -1,0 +1,32 @@
+<%= form_with(model: surgery_recipe_req, local: true) do |form| %>
+  <% if surgery_recipe_req.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(surgery_recipe_req.errors.count, "error") %> prohibited this surgery_recipe_req from being saved:</h2>
+
+      <ul>
+      <% surgery_recipe_req.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :qty %>
+    <%= form.number_field :qty, id: :surgery_recipe_req_qty %>
+  </div>
+
+  <div class="field">
+    <%= form.label :supply_list_id %>
+    <%= form.text_field :supply_list_id, id: :surgery_recipe_req_supply_list_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :surgery_type_id %>
+    <%= form.text_field :surgery_type_id, id: :surgery_recipe_req_surgery_type_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

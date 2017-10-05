@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Qty:</strong>
+  <%= @inventory.qty %>
+</p>
+
+<p>
+  <strong>Clinic:</strong>
+  <%= @inventory.clinic %>
+</p>
+
+<p>
+  <strong>Supply list:</strong>
+  <%= @inventory.supply_list %>
+</p>
+
+<%= link_to 'Edit', edit_inventory_path(@inventory) %> |
+<%= link_to 'Back', inventories_path %>

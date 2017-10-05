@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Qty:</strong>
+  <%= @surgery_recipe_req.qty %>
+</p>
+
+<p>
+  <strong>Supply list:</strong>
+  <%= @surgery_recipe_req.supply_list %>
+</p>
+
+<p>
+  <strong>Surgery type:</strong>
+  <%= @surgery_recipe_req.surgery_type %>
+</p>
+
+<%= link_to 'Edit', edit_surgery_recipe_req_path(@surgery_recipe_req) %> |
+<%= link_to 'Back', surgery_recipe_reqs_path %>

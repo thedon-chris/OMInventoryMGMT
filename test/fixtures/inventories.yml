@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  qty: 1
+  clinic: one
+  supply_list: one
+
+two:
+  qty: 1
+  clinic: two
+  supply_list: two

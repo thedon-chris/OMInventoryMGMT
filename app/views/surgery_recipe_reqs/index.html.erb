@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Surgery Recipe Reqs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Qty</th>
+      <th>Supply list</th>
+      <th>Surgery type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @surgery_recipe_reqs.each do |surgery_recipe_req| %>
+      <tr>
+        <td><%= surgery_recipe_req.qty %></td>
+        <td><%= surgery_recipe_req.supply_list.item_name %></td>
+        <td><%= surgery_recipe_req.surgery_type.surgery_name %></td>
+        <td><%= link_to 'Show', surgery_recipe_req %></td>
+        <td><%= link_to 'Edit', edit_surgery_recipe_req_path(surgery_recipe_req) %></td>
+        <td><%= link_to 'Destroy', surgery_recipe_req, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Surgery Recipe Req', new_surgery_recipe_req_path %>

@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Item name:</strong>
+  <%= @supply_list.item_name %>
+</p>
+
+<%= link_to 'Edit', edit_supply_list_path(@supply_list) %> |
+<%= link_to 'Back', supply_lists_path %>
