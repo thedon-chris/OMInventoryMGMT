@@ -37,10 +37,17 @@ class SurgeryAppt < ApplicationRecord
 # ----------------------------------
 #Testing loop through all the supply items
 
+
+# #First, capture all of the supplies into a variable
 # supplies = SupplyList.all
+# #declare a "looping" variable i
 # i = 1
+# #first we want to l
 # while i < supplies.count do
+#   #create an empty array to store the qtys
 #   arr = []
+#   #we know that surgery appointments are a list of active record assocation objects, we want to loop through them
+#   #create each loop onto appoitnments
 #   SurgeryAppt.all.each do |surgery|
 #     surgery.surgery_type.surgery_recipe_reqs.where(supply_list_id:i).each do |item|
 #       arr << item.qty
