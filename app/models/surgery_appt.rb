@@ -36,5 +36,30 @@ class SurgeryAppt < ApplicationRecord
   # end
 
 
+  supplies = SupplyList.all
+  i = 1
+  while i < supplies.count do
+   arr = []
+   SurgeryAppt.all.each do |surgery|
+     surgery.surgery_type.surgery_recipe_reqs.where(supply_list_id:i).each do |item|
+       p arr << item.qty
+     end
+   end
+   p "The total qty planned to use in Surgery Appointments of item #{SupplyList.find(i).item_name} is #{arr.sum}"
+   i+=1
+  end
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 end
