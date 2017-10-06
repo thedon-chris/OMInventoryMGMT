@@ -71,7 +71,6 @@ class SurgeryAppt < ApplicationRecord
 
 
 
-
   supplies = SupplyList.all
   i = 1
   while i < supplies.count do
@@ -84,18 +83,6 @@ class SurgeryAppt < ApplicationRecord
    p "The total qty planned to use in Surgery Appointments of item #{SupplyList.find(i).item_name} is #{arr.sum}"
    i+=1
   end
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 end
