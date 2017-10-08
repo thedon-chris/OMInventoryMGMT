@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  get 'session/new'
-
-  get 'session/create'
-
-  get 'session/destroy'
-
   resources :inventories
   resources :actual_recipe_reqs
   resources :surgery_appts
