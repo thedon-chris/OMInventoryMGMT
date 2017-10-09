@@ -58,3 +58,6 @@ gem "hirb", "~> 0.7.3"
 
 # Added at 2017-10-05 17:04:58 -0400 by christopherarguello:
 gem "rails-erd", "~> 1.5"
+
+# Added at 2017-10-09 10:54:24 -0400 by christopherarguello:
+gem "wirble", "~> 0.1.3"
