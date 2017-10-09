@@ -16,6 +16,12 @@
     <%= form.text_field :surgery_name, id: :surgery_type_surgery_name %>
   </div>
 
+<ul>
+  <% @surgery_recipe_reqs.each do |req| %>
+      <li><%= req.supply_list.item_name %>: <%= req.qty %></li>
+    <% end %>
+</ul>
+
   <div class="actions">
     <%= form.submit %>
   </div>

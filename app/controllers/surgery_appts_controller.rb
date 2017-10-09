@@ -19,6 +19,9 @@ class SurgeryApptsController < ApplicationController
 
   # GET /surgery_appts/1/edit
   def edit
+    @surgery_recipe_reqs = @surgery_appt.surgery_type.surgery_recipe_reqs.each do |x|
+      x.supply_list.item_name
+    end
   end
 
   # POST /surgery_appts
