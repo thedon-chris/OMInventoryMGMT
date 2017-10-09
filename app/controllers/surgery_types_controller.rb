@@ -19,6 +19,7 @@ class SurgeryTypesController < ApplicationController
 
   # GET /surgery_types/1/edit
   def edit
+    @surgery_recipe_reqs = @surgery_type.surgery_recipe_reqs
   end
 
   # POST /surgery_types

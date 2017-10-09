@@ -26,6 +26,15 @@
     <%= form.text_field :surgery_type_id, id: :surgery_appt_surgery_type_id %>
   </div>
 
+  <div class="field">
+    <%= form.label :surgery_recipe_req %>
+    <%= form.text_field :surgery_type_id, id: :surgery_appt_surgery_type_id %>
+  </div>
+
+  <ul>
+    <li><%= collection_select :surgery_recipe_req, :surgery_appt_id, surgery_appt.surgery_type.surgery_recipe_reqs, :id, :supply_list_id  %> </li>
+  </ul>
+
   <div class="actions">
     <%= form.submit %>
   </div>

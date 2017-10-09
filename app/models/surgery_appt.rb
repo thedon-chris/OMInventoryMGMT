@@ -11,91 +11,70 @@ class SurgeryAppt < ApplicationRecord
   #     list.surgery_type
   #   end
   # end
-
   def appts
     @appts = SurgeryAppt.all
   end
 
+end
 
-  # This gets the individual supply list items,
-  #I am still not able to extract the qty's at this moment
-  # SurgeryAppt.all.each do |surgery|
-  # p surgery.surgery_type.surgery_recipe_reqs.where(supply_list_id:1)
-  # end
-
-  # This gets the individual supply list items and their quantity
-  #this is only working for 1 item at a time
-  #next step is to assign variable "i" to supply list id
-  # arr = []
-  # SurgeryAppt.all.each do |surgery|
-  #   surgery.surgery_type.surgery_recipe_reqs.where(supply_list_id:1).each do |item|
-  #     arr << item.qty
-  #   end
-  # end
-  # p "The total of this item is #{arr.sum}"
-
-# ----------------------------------
-#Testing loop through all the supply items
-
-# supplies = SupplyList.all
-# i = 1
-# while i < supplies.count do
-#   arr = []
-#   SurgeryAppt.all.each do |surgery|
-#     surgery.surgery_type.surgery_recipe_reqs.where(supply_list_id:i).each do |item|
-#       arr << item.qty
+# final = []
+# SurgeryAppt.includes(:surgery_type).where(surgery_date: "2017-10-06").each do |stype|
+#   final << stype.surgery_recipe_reqs
+#     .each do |ssr|
+#       ssr.qty
 #     end
 #   end
-#   p "The total qty planned to use in Surgery Appointments of item #{supplies} is #{arr.sum}"
-#   i+=1
+#
+#
+#
+#       .each do |ssr|
+#            {
+#             name: ssr.supply_list.item_name,
+#             qty: ssr.qty,
+#             id: ssr.supply_list_id
+#           }
+#       end
 # end
+#
+# final.flatten
+#
+# .group(:supply_list_id)
+#
 
 
 
+ ############## HENRY ##############
 
-
-
-
-
-
-
-  #this is the logic we will use to confirm the match on supply_list_id of the individual items
-  # Inventory.first.supply_list_id == SurgeryAppt.first.surgery_type.surgery_recipe_reqs.first.supply_list_id
-
-
-
-
-
-
-
-
-
-
-
-  supplies = SupplyList.all
-  i = 1
-  while i < supplies.count do
-   arr = []
-   SurgeryAppt.all.each do |surgery|
-     surgery.surgery_type.surgery_recipe_reqs.where(supply_list_id:i).each do |item|
-       p arr << item.qty
-     end
-   end
-   p "The total qty planned to use in Surgery Appointments of item #{SupplyList.find(i).item_name} is #{arr.sum}"
-   i+=1
-  end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-end
+#  final = []
+#  SurgeryAppt.includes(:surgery_type).where(surgery_date: "2017-10-06").each do |stype|
+#    final << stype.surgery_type.surgery_recipe_reqs.group(:supply_list_id)
+#                  .map do |ssr|
+#                    {
+#                      :"#{ssr.supply_list_id}" => {
+#                        name: ssr.supply_list.item_name,
+#                        qty: ssr.qty,
+#                        id: ssr.supply_list_id
+#                      }
+#                    }
+#                  end
+#  end
+#
+# final_hash = []
+# final.flatten.each do |hash|
+#   key = hash.keys.first.to_s
+#   if final_hash.map{|d| d.keys.first.to_s }.flatten.include?(key)
+#     final_hash.each do |fh|
+#       if key == fh.keys.first.to_s
+#         old_hash = fh[key.to_sym]
+#         new_qty = hash[key.to_sym][:qty]
+#         old_qty = old_hash[:qty]
+#         ix = final_hash.index(fh)
+#         clone_hash = hash
+#         hash = clone_hash[key.to_sym][:qty] += old_qty
+#         final_hash[ix] = clone_hash
+#       end
+#     end
+#   else
+#     final_hash << hash
+#   end
+# end
