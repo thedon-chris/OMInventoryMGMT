@@ -15,6 +15,7 @@
   <tbody>
     <% @surgery_recipe_reqs.each do |surgery_recipe_req| %>
       <tr>
+        <td><%= surgery_recipe_req.id %></td>
         <td><%= surgery_recipe_req.qty %></td>
         <td><%= surgery_recipe_req.supply_list.item_name %></td>
         <td><%= surgery_recipe_req.surgery_type.surgery_name %></td>
