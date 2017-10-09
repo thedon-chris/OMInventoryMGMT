@@ -4,4 +4,8 @@ class Inventory < ApplicationRecord
 
   validates :qty, presence: true
 
+
+
+
+
 end

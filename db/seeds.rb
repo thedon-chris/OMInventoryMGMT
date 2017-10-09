@@ -52,3 +52,14 @@ Inventory.create(qty: 100, clinic_id: 1, supply_list_id: 1 )
 # SupplyList.create(qty: 100, clinic_id: 1,supply_list_id: i )
 # SupplyList.create(qty: 100, clinic_id: 1,supply_list_id: i )
 # SupplyList.create(qty: 100, clinic_id: 1,supply_list_id: i )
+
+i=0
+5.times do |i|
+  i+=1
+  ActualRecipeReq.create(qty:0, supply_list_id:1, surgery_type_id:i, surgery_appt_id:i)
+  ActualRecipeReq.create(qty:0, supply_list_id:2, surgery_type_id:i, surgery_appt_id:i)
+  ActualRecipeReq.create(qty:0, supply_list_id:3, surgery_type_id:i, surgery_appt_id:i)
+  ActualRecipeReq.create(qty:0, supply_list_id:4, surgery_type_id:i, surgery_appt_id:i)
+  ActualRecipeReq.create(qty:0, supply_list_id:5, surgery_type_id:i, surgery_appt_id:i)
+  ActualRecipeReq.create(qty:0, supply_list_id:6, surgery_type_id:i, surgery_appt_id:i)
+end

@@ -39,44 +39,8 @@ end
 
 
 
-Inventory.all.each do |x|
-  x.clinic.surgery_appts.each do |a|
-    a.actual_recipe_reqs.each do |b|
-      p b.qty
-    end
-  end
-end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#FORECAST EQUATION
-#THIS WILL GIVE THE NUMBER OF EXPECT USAGE IN THE COMING DAYS/WEEKS/MONTHS
+#This will list the inventory demand, by item
 def inventorycheck(args)
   Inventory.find(args) do |item|
     arr = []
@@ -87,34 +51,24 @@ def inventorycheck(args)
       end
     end
     arr = arr.sum
-    stock = stock - arr
-    Inventory.find(args).update(qty:stock)
+    p "The demand for #{item.supply_list.item_name} is #{arr}"
   end
 end
 
 
 
-Inventory.find(1) do |item|
-  item.clinic.surgery_appts.each do |recipe|
-    recipe.
+
+
+
+
+
+Inventory.all.each do |x|
+  x.clinic.surgery_appts.each do |a|
+    a.actual_recipe_reqs.each do |b|
+      p b.qty
+    end
+  end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
