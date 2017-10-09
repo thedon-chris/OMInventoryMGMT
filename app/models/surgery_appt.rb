@@ -17,13 +17,11 @@ class SurgeryAppt < ApplicationRecord
 
 end
 
-<<<<<<< HEAD
 # final = []
 # SurgeryAppt.includes(:surgery_type).where(surgery_date: "2017-10-06").each do |stype|
 #   final << stype.surgery_recipe_reqs
 #     .each do |ssr|
 #       ssr.qty
-=======
   # This gets the individual supply list items,
   #I am still not able to extract the qty's at this moment
   # SurgeryAppt.all.each do |surgery|
@@ -58,7 +56,6 @@ end
 #   SurgeryAppt.all.each do |surgery|
 #     surgery.surgery_type.surgery_recipe_reqs.where(supply_list_id:i).each do |item|
 #       arr << item.qty
->>>>>>> 1d39cc7fbc5a7a650bb56df204cbad658f94c3c7
 #     end
 #   end
 #
@@ -115,8 +112,6 @@ end
 #     final_hash << hash
 #   end
 # end
-<<<<<<< HEAD
-=======
 
 
 def self.demand
@@ -262,13 +257,3 @@ end
 # end
 #
 # final.flatten
-
-
-
-
-
-
-
-
-end
->>>>>>> 1d39cc7fbc5a7a650bb56df204cbad658f94c3c7
