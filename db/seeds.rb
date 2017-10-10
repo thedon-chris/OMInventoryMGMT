@@ -58,7 +58,20 @@ i=0
 end
 
 
-Inventory.create(qty: 100, clinic_id: 1, supply_list_id: 1 )
+i=0
+5.times do |i|
+  i+=1
+Inventory.create(qty: 100, clinic_id: i, supply_list_id: 1 )
+Inventory.create(qty: 100, clinic_id: i, supply_list_id: 2 )
+Inventory.create(qty: 100, clinic_id: i, supply_list_id: 3 )
+Inventory.create(qty: 100, clinic_id: i, supply_list_id: 4 )
+Inventory.create(qty: 100, clinic_id: i, supply_list_id: 5 )
+Inventory.create(qty: 100, clinic_id: i, supply_list_id: 6 )
+end
+
+
+
+
 # SupplyList.create(qty: 100, clinic_id: 1,supply_list_id: i )
 # SupplyList.create(qty: 100, clinic_id: 1,supply_list_id: i )
 # SupplyList.create(qty: 100, clinic_id: 1,supply_list_id: i )

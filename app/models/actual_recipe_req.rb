@@ -5,4 +5,12 @@ class ActualRecipeReq < ApplicationRecord
 
   validates :qty, presence: true
 
+  after_save :check_inventory
+
+  def check_inventory
+    # if status == 'complete'
+    #   # decrement inventory
+    # end
+  end
+
 end
