@@ -16,13 +16,16 @@
     <%= form.text_field :surgery_name, id: :surgery_type_surgery_name %>
   </div>
 
+<% end %>
+
 <ul>
   <% @surgery_recipe_reqs.each do |req| %>
-      <li><%= req.supply_list.item_name %>: <%= req.qty %></li>
+    <%= form_with(model: req, local: true, method: 'put', data: {remote: true}, class: "req_#{req.id}") do |form| %>
+      <li>
+        <%= form.object.supply_list.item_name %>
+        <%= form.number_field :qty %>
+      </li>
+      <%= submit_tag "Update" %>
     <% end %>
+  <% end %>
 </ul>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
