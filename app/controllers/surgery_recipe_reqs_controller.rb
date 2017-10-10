@@ -28,6 +28,7 @@ class SurgeryRecipeReqsController < ApplicationController
 
     respond_to do |format|
       if @surgery_recipe_req.save
+
         format.html { redirect_to @surgery_recipe_req, notice: 'Surgery recipe req was successfully created.' }
         format.json { render :show, status: :created, location: @surgery_recipe_req }
       else
