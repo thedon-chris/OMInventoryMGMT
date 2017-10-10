@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171010041909) do
+ActiveRecord::Schema.define(version: 20171010164220) do
 
   create_table "actual_recipe_reqs", force: :cascade do |t|
     t.integer "qty"
@@ -18,10 +18,8 @@ ActiveRecord::Schema.define(version: 20171010041909) do
     t.integer "supply_list_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "surgery_type_id"
     t.index ["supply_list_id"], name: "index_actual_recipe_reqs_on_supply_list_id"
     t.index ["surgery_appt_id"], name: "index_actual_recipe_reqs_on_surgery_appt_id"
-    t.index ["surgery_type_id"], name: "index_actual_recipe_reqs_on_surgery_type_id"
   end
 
   create_table "clinics", force: :cascade do |t|
