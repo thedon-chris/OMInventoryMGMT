@@ -15,6 +15,19 @@ class SurgeryAppt < ApplicationRecord
     @appts = SurgeryAppt.all
   end
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 end
 
 # final = []
