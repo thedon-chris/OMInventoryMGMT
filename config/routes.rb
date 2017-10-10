@@ -1,12 +1,22 @@
 Rails.application.routes.draw do
   root 'page#index'
 
-  get 'session/new'
 
-  get 'session/create'
 
-  get 'session/destroy'
 
+#-------------------------------------------------
+#Session Routes go here
+  # resources :session, only: [:new, :create, :destroy]
+  get 'signup' => 'users#new', as: 'signup'
+  get 'login' => 'session#new', as: 'login'
+  post 'login' => 'session#create'
+  # get 'session/new'
+  get 'logout' => 'session#destroy', as: 'logout'
+  #-------------------------------------------------
+
+
+#--------------------------------------------------------
+#Below untouched
   resources :users
   resources :inventories
   resources :actual_recipe_reqs
@@ -17,3 +27,20 @@ Rails.application.routes.draw do
   resources :supply_lists
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
+
+
+#-----------------------------------------------------------------------------
+#---------------CHRIS NOTES= THIS IS COPY PAST FROM MY SESSIONS "COPYCAT"---------------------------
+
+# root 'page#index'
+# resources :sessions, only: [:new, :create, :destroy]
+#
+# get 'signup' => 'users#new', as: 'signup'
+# get 'login' => 'sessions#new', as: 'login'
+# post 'login' => 'sessions#create'
+#
+# get 'logout' => 'sessions#destroy', as: 'logout'
+#
+# resources :users
+# get 'page/index'
+#-----------------------------------------------------------------------------
