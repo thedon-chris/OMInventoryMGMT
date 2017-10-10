@@ -24,21 +24,37 @@ class SurgeryApptsController < ApplicationController
     end
   end
 
+
+
   # POST /surgery_appts
   # POST /surgery_appts.json
   def create
     @surgery_appt = SurgeryAppt.new(surgery_appt_params)
-
-    respond_to do |format|
       if @surgery_appt.save
-        format.html { redirect_to @surgery_appt, notice: 'Surgery appt was successfully created.' }
-        format.json { render :show, status: :created, location: @surgery_appt }
-      else
-        format.html { render :new }
-        format.json { render json: @surgery_appt.errors, status: :unprocessable_entity }
+        SurgeryType.find(@surgery_appt.surgery_type_id).surgery_recipe_reqs.each do |req|
+          supply_item = req.supply_list_id
+          ActualRecipeReq.create(
+            qty:0,
+            supply_list_id:supply_item,
+            surgery_appt_id:@surgery_appt.id)
+          end
+        else
+          redirect_to root_path
       end
-    end
   end
+
+
+
+    # @surgery_appt = SurgeryAppt.new(surgery_appt_params)
+    # respond_to do |format|
+    #   if @surgery_appt.save
+    #     format.html { redirect_to @surgery_appt, notice: 'Surgery appt was successfully created.' }
+    #     format.json { render :show, status: :created, location: @surgery_appt }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @surgery_appt.errors, status: :unprocessable_entity }
+    #   end
+    # end
 
   # PATCH/PUT /surgery_appts/1
   # PATCH/PUT /surgery_appts/1.json

@@ -62,26 +62,6 @@ end
 
 
 
-Inventory.all.each do |x|
-  x.clinic.surgery_appts.each do |a|
-    a.actual_recipe_reqs.each do |b|
-      p b.qty
-    end
-  end
-end
-
-
-
-
-
-
-
-
-
-
-def stock(item)
-  stocknow = Inventory.find(item).qty
-end
 
 
 
@@ -103,3 +83,62 @@ end
 Inventory.first.clinic.surgery_appts.first.surgery_type.surgery_recipe_reqs.first.qty
 myvar = SupplyList.first.surgery_recipe_reqs.first.surgery_type.surgery_appts.first.surgery_type.surgery_recipe_reqs.where(supply_list_id:1).first.qty
 Inventory.first.update(qty:(Inventory.first.qty - myvar))
+
+
+
+
+
+
+
+
+
+
+
+
+
+#==================================================================
+#==================================================================
+#==================================================================
+#==================================================================
+#Here go functions that attempt to create the actual recipe reqs at 0 at moment of appointment creation
+#When Surgery Appt created
+#capture individual surgery appointment data set
+"surgery_type_id"=>"1"
+@surgery_appt = SurgeryAppt.new(surgery_appt_params)
+# this_surgery = SurgeryAppt.create(surgery_date: "2017-10-6", clinic_id:1, surgery_type_id: params[:surgery_type_id])
+#Select Surgery Type
+#Select ALL surgery recipe REQS
+#Change each surgery recipe req to 0
+#Create actual recipe reqs with correct params
+SurgeryType.find(@surgery_appt.surgery_type_id).surgery_recipe_reqs.each do |req|
+  supply_item = req.supply_list_id
+  ActualRecipeReq.create(
+    qty:0,
+    supply_list_id:supply_item,
+    surgery_appt_id:@surgery_appt.id)
+end
+
+
+
+
+
+
+
+
+
+
+
+
+s = 1
+this_surgery = SurgeryAppt.create(surgery_date: "2017-10-6", clinic_id:1, surgery_type_id: s)
+#Select Surgery Type
+#Select ALL surgery recipe REQS
+#Change each surgery recipe req to 0
+#Create actual recipe reqs with correct params
+SurgeryType.find(s).surgery_recipe_reqs.each do |req|
+  supply_item = req.supply_list_id
+  ActualRecipeReq.create(
+    qty:0,
+    supply_list_id:supply_item,
+    surgery_appt_id:this_surgery.id)
+end
