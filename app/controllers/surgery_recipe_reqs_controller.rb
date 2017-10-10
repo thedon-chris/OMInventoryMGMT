@@ -43,14 +43,15 @@ class SurgeryRecipeReqsController < ApplicationController
     respond_to do |format|
       if @surgery_recipe_req.update(surgery_recipe_req_params)
         format.html { redirect_to @surgery_recipe_req, notice: 'Surgery recipe req was successfully updated.' }
+        format.js
         format.json { render :show, status: :ok, location: @surgery_recipe_req }
       else
         format.html { render :edit }
         format.json { render json: @surgery_recipe_req.errors, status: :unprocessable_entity }
       end
     end
-  end
 
+  end
   # DELETE /surgery_recipe_reqs/1
   # DELETE /surgery_recipe_reqs/1.json
   def destroy
