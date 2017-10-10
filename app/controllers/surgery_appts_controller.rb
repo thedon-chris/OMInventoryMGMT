@@ -34,7 +34,7 @@ class SurgeryApptsController < ApplicationController
         SurgeryType.find(@surgery_appt.surgery_type_id).surgery_recipe_reqs.each do |req|
           supply_item = req.supply_list_id
           ActualRecipeReq.create(
-            qty:0,
+            qty:req.qty,
             supply_list_id:supply_item,
             surgery_appt_id:@surgery_appt.id)
           end

@@ -142,3 +142,45 @@ SurgeryType.find(s).surgery_recipe_reqs.each do |req|
     supply_list_id:supply_item,
     surgery_appt_id:this_surgery.id)
 end
+
+
+
+
+
+
+#=======================================================================
+#=======================================================================
+#=======================================================================
+#CALCULATING DEMAND AND SUBTRACTING FROM INVENTORY
+#capture supplylist item into variable
+#variable declarations
+this_supply = SupplyList.find(1)
+actual_consumed = 0
+this_clinic = Clinic.find(1)
+this_supply_at_clinic = this_clinic.inventories.where(supply_list_id: this_supply)
+this_supply_at_clinic_qty = 0
+
+#Collect actual_recipe_req by item and qty
+#add them all together one by one
+#and store them in a variable called this_supply_qty
+SurgeryAppt.all.each do |appt|
+  appt.actual_recipe_reqs.where(supply_list_id: this_supply).each do |item|
+    actual_consumed += item.qty
+  end
+end
+
+#collect the pertinent inventories of the clinic
+#add them all together one by one
+#and store them in a variable called this_supply_at_clinic_qty
+this_supply_at_clinic.each do |inventory|
+  this_supply_at_clinic_qty += inventory.qty
+end
+
+#complete the transactions
+#create new inventory variable by subracting the demand from the inventory
+new_inventory = this_supply_at_clinic_qty -= actual_consumed
+#complete the SQL updates below
+this_supply_at_clinic.first.update(qty:new_inventory)
+
+
+p "The Clinic #{this_clinic.clinic_name} has Inventory of #{this_supply.item_name} @ #{this_supply_at_clinic_qty} units, they have a actual consumption for #{actual_consumed} units"
