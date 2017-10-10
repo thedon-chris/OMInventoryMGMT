@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'page/index'
+  root 'page#index'
 
   get 'session/new'
 
