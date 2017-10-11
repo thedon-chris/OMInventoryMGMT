@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root 'page#index'
 
-
-
+  get 'completed/:id' => 'surgery_appts#completed', as: 'completed'
+  put 'completed2/:id' => 'surgery_appts#completed', as: 'completed_done'
 
 #-------------------------------------------------
 #Session Routes go here

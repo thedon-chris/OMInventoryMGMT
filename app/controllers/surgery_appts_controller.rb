@@ -1,5 +1,5 @@
 class SurgeryApptsController < ApplicationController
-  before_action :set_surgery_appt, only: [:show, :edit, :update, :destroy]
+  before_action :set_surgery_appt, only: [:show, :edit, :update, :destroy, :completed]
 
   # GET /surgery_appts
   # GET /surgery_appts.json
@@ -15,13 +15,14 @@ class SurgeryApptsController < ApplicationController
   # GET /surgery_appts/new
   def new
     @surgery_appt = SurgeryAppt.new
+
   end
 
   # GET /surgery_appts/1/edit
   def edit
-    @surgery_recipe_reqs = @surgery_appt.surgery_type.surgery_recipe_reqs.each do |x|
-      x.supply_list.item_name
-    end
+    # @surgery_recipe_reqs = @surgery_appt.surgery_type.surgery_recipe_reqs.each do |x|
+    #   x.supply_list.item_name
+    # end
   end
 
 
@@ -41,6 +42,21 @@ class SurgeryApptsController < ApplicationController
         else
           redirect_to root_path
       end
+  end
+
+  def completed
+  end
+
+  def completed2
+    respond_to do |format|
+      if @surgery_appt.update(surgery_appt_params)
+        format.html { redirect_to @surgery_appt, notice: 'Surgery appt was successfully updated.' }
+        format.json { render :show, status: :ok, location: @surgery_appt }
+      else
+        format.html { render :edit }
+        format.json { render json: @surgery_appt.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
 
@@ -88,6 +104,6 @@ class SurgeryApptsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def surgery_appt_params
-      params.require(:surgery_appt).permit(:surgery_date, :clinic_id, :surgery_type_id)
+      params.require(:surgery_appt).permit(:surgery_date, :clinic_id, :surgery_type_id, :status)
     end
 end
