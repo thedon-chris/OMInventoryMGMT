@@ -56,8 +56,12 @@ class SurgeryApptsController < ApplicationController
         format.json { render :show, status: :ok, location: @surgery_appt }
         puts "********************************************"
         if params[:surgery_appt][:status].include? "true"
-          puts "#{params[:surgery_appt][:status]}"
-          puts "parameters are true! wohooo"
+          data = params[:surgery_appt][:surgery_recipe_req]
+          myhash = Hash[data.keys.zip(data.values)].map {|key, value| [key, value] }
+          myhash.each do |update|
+            item = ActualRecipeReq.find(update[0].to_i)
+            item.update(qty:update[1].to_i)
+          end
           puts "********************************************"
         else
           puts "#{params[:surgery_appt][:status]}"
