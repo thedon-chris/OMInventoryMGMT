@@ -56,8 +56,7 @@ class SurgeryApptsController < ApplicationController
         format.json { render :show, status: :ok, location: @surgery_appt }
         puts "********************************************"
         if params[:surgery_appt][:status].include? "true"
-          puts "#{params[:surgery_appt][:status]}"
-          puts "parameters are true! wohooo"
+          puts "#{params[:surgery_appt][:surgery_recipe_req]}"
           puts "********************************************"
         else
           puts "#{params[:surgery_appt][:status]}"
