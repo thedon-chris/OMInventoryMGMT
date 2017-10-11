@@ -25,16 +25,16 @@
     <%= form.text_field :status, value:  @surgery_appt.status%>
     </div>
 
-    <ul>
-       <% @surgery_appt.surgery_type.surgery_recipe_reqs.each do |req| %>
-         <%= form.fields_for req do |fa| %>
-           <li class="field">
-             <%= fa.label req.supply_list.item_name %>
-             <%= fa.text_field req.supply_list.item_name.to_sym, value: req.qty %>
-           </li>
-         <% end %>
-       <% end %>
-    </ul>
+  <ul>
+   <%@surgery_appt.surgery_type.surgery_recipe_reqs.each do |req| %>
+     <%= form.fields_for req do |fa| %>
+       <li class="field">
+         <%= fa.label req.supply_list.item_name %>
+         <%= fa.text_field req.supply_list.item_name.to_sym, value: req.qty %>
+       </li>
+     <% end %>
+   <% end %>
+  </ul>
 
   <div class="actions">
     <%= submit_tag "Update" %>
