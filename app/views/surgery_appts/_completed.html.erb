@@ -2,10 +2,19 @@
 <%= form_with(model: @surgery_appt, local: true) do |form| %>
 
   <p>
+    <strong>Clinic:</strong>
+    <%= @surgery_appt.clinic.clinic_name %>
+  </p>
+
+  <p>
     <strong>Appointment Date:</strong>
     <%= @surgery_appt.surgery_date %>
   </p>
 
+  <p>
+    <strong>Appointment Type:</strong>
+    <%= @surgery_appt.surgery_type.surgery_name %>
+  </p>
 
   <div class="field">
     <%= form.label :status %>

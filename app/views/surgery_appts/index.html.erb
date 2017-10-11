@@ -18,6 +18,7 @@
         <td><%= surgery_appt.surgery_date %></td>
         <td><%= surgery_appt.clinic.clinic_name %></td>
         <td><%= surgery_appt.surgery_type.surgery_name %></td>
+        <td><%= link_to 'Complete', completed_path(surgery_appt.id) %></td>
         <td><%= link_to 'Show', surgery_appt %></td>
         <td><%= link_to 'Edit', edit_surgery_appt_path(surgery_appt) %></td>
         <td><%= link_to 'Destroy', surgery_appt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
