@@ -50,11 +50,15 @@ s=0
 10.times do |s|
   s+=1
 <<<<<<< HEAD
+<<<<<<< HEAD
   SurgeryAppt.create(surgery_date: "2017-10-15", clinic_id:1, surgery_type_id: s, status: true)
 =======
   SurgeryAppt.create(surgery_date: "2017-10-12", clinic_id:1, surgery_type_id: s, status: true)
   SurgeryAppt.create(surgery_date: "2017-10-13", clinic_id:1, surgery_type_id: s, status: true)
 >>>>>>> 073048a680f16240c0155b8c27465963f9437229
+=======
+  SurgeryAppt.create(surgery_date: "2017-10-14", clinic_id:1, surgery_type_id: s, status: true)
+>>>>>>> e2a99ab6ef3aa28e8245d5893f2bdf74ef770ced
 end
 
 i=0
