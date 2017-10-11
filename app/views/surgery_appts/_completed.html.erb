@@ -15,6 +15,7 @@
     <strong>Appointment Type:</strong>
     <%= @surgery_appt.surgery_type.surgery_name %>
   </p>
+
   <p>
     <strong>Appointment Current Status:</strong>
     <%= @surgery_appt.status %>
@@ -23,7 +24,7 @@
 
   <div class="field">
     <%= form.label :status %>
-    <%= form.text_field :status, value:  @surgery_appt.status%>
+    <%= form.radio_button :status, value: "put here"%>
    </div>
 
    <ul>
