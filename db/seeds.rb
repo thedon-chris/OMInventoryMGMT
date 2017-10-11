@@ -17,21 +17,15 @@ SupplyList.create(item_name: 'Bandages')
 SupplyList.create(item_name: 'Implant')
 SupplyList.create(item_name: 'Silicone Tube')
 
-i=0
-5.times do |i|
-  i+=1
-Inventory.create(qty: 100, clinic_id: i, supply_list_id: 1 )
-Inventory.create(qty: 100, clinic_id: i, supply_list_id: 2 )
-Inventory.create(qty: 100, clinic_id: i, supply_list_id: 3 )
-Inventory.create(qty: 100, clinic_id: i, supply_list_id: 4 )
-Inventory.create(qty: 100, clinic_id: i, supply_list_id: 5 )
-Inventory.create(qty: 100, clinic_id: i, supply_list_id: 6 )
-end
-
-
-
 Clinic.create(clinic_name: "Midtown Breasts")
 Clinic.create(clinic_name:"South Miami Gastro")
+
+Inventory.create(qty: 100, clinic_id: 1, supply_list_id: 1 )
+Inventory.create(qty: 100, clinic_id: 1, supply_list_id: 2 )
+Inventory.create(qty: 100, clinic_id: 1, supply_list_id: 3 )
+Inventory.create(qty: 100, clinic_id: 1, supply_list_id: 4 )
+Inventory.create(qty: 100, clinic_id: 1, supply_list_id: 5 )
+Inventory.create(qty: 100, clinic_id: 1, supply_list_id: 6 )
 
 SurgeryType.create(surgery_name: "Endoscopy")
 SurgeryType.create(surgery_name: "Breast Aug")

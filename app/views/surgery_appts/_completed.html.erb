@@ -15,24 +15,19 @@
     <strong>Appointment Type:</strong>
     <%= @surgery_appt.surgery_type.surgery_name %>
   </p>
-  <p>
-    <strong>Appointment Current Status:</strong>
-    <%= @surgery_appt.status %>
-  </p>
-
 
   <div class="field">
     <%= form.label :status %>
-    <%= form.text_field :status, value:  @surgery_appt.status%>
+    <%= form.text_field :status %>
    </div>
 
    <ul>
      <% @surgery_appt.surgery_type.surgery_recipe_reqs.each do |req| %>
-         <li>
-           <%= label_tag req.supply_list.item_name %>
-           <!-- <%= number_field_tag "#{req.supply_list.item_name}-id", req.id  %> -->
-           <%= number_field_tag req.supply_list.item_name, req.qty %>
-         </li>
+           <li>
+             <%= label_tag req.supply_list.item_name %>
+             <!-- <%= number_field_tag "#{req.supply_list.item_name}-id", req.id  %> -->
+             <%= number_field_tag req.supply_list.item_name, req.qty %>
+           </li>
      <% end %>
    </ul>
 

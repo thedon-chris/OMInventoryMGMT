@@ -55,7 +55,7 @@ class SurgeryApptsController < ApplicationController
         format.html { redirect_to @surgery_appt, notice: 'Surgery appt was successfully updated.' }
         format.json { render :show, status: :ok, location: @surgery_appt }
         puts "********************************************"
-        if params[:surgery_appt][:status] == true
+        if params[:surgery_appt][:status].include? "true"
           puts "#{params[:surgery_appt][:status]}"
           puts "parameters are true! wohooo"
           puts "********************************************"
