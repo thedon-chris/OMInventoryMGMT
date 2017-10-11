@@ -52,17 +52,18 @@ class SurgeryApptsController < ApplicationController
   def update
     respond_to do |format|
       if @surgery_appt.update(surgery_appt_params)
-        format.html { redirect_to @surgery_appt, notice: 'Surgery appt was successfully updated.' }
-        format.json { render :show, status: :ok, location: @surgery_appt }
 
         if @surgery_appt.status # the surgery is not yet complete
-
           # TODO: I wish I learned how to use accepts_nested_attributes_for
           surgery_recipe_reqs_hsh = params[:surgery_appt][:surgery_recipe_req]
           @surgery_appt.complete_surgery(surgery_recipe_reqs_hsh)
           #take the acutal reqs
           #go subtract from inventory
         end
+
+        format.html { redirect_to @surgery_appt, notice: 'Surgery appt was successfully updated.' }
+        format.json { render :show, status: :ok, location: @surgery_appt }
+
       else
         format.html { render :edit }
         format.json { render json: @surgery_appt.errors, status: :unprocessable_entity }

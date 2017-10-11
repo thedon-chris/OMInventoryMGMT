@@ -19,11 +19,19 @@ class SurgeryAppt < ApplicationRecord
     surgery_recipe_reqs_hsh.each do |supply_id, qty|
       item = self.actual_recipe_reqs.find_by(supply_list_id: supply_id)
       item.update(qty: qty)
+
+      inventory = self.clinic.inventories.find_by(supply_list_id:supply_id)
+
+      inventory.update!(qty:0)
     end
     self.update(status: false)
+
+    p "****************************************************"
   end
 
 end
+
+SurgeryAppt.first.clinic.inventories.find_by(supply_list_id:1).qty
 
 # final = []
 # SurgeryAppt.includes(:surgery_type).where(surgery_date: "2017-10-06").each do |stype|
