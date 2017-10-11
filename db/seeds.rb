@@ -52,16 +52,16 @@ s=0
   SurgeryAppt.create(surgery_date: "2017-10-14", clinic_id:1, surgery_type_id: s, status: true)
 end
 
-i=0
-5.times do |i|
-  i+=1
-  ActualRecipeReq.create(qty:6, supply_list_id:1, surgery_appt_id:i)
-  ActualRecipeReq.create(qty:150, supply_list_id:2, surgery_appt_id:i)
-  ActualRecipeReq.create(qty:80, supply_list_id:3, surgery_appt_id:i)
-  ActualRecipeReq.create(qty:25, supply_list_id:4, surgery_appt_id:i)
-  ActualRecipeReq.create(qty:8, supply_list_id:5, surgery_appt_id:i)
-  ActualRecipeReq.create(qty:4, supply_list_id:6, surgery_appt_id:i)
-end
+# i=0
+# 5.times do |i|
+#   i+=1
+#   ActualRecipeReq.create(qty:6, supply_list_id:1, surgery_appt_id:i)
+#   ActualRecipeReq.create(qty:150, supply_list_id:2, surgery_appt_id:i)
+#   ActualRecipeReq.create(qty:80, supply_list_id:3, surgery_appt_id:i)
+#   ActualRecipeReq.create(qty:25, supply_list_id:4, surgery_appt_id:i)
+#   ActualRecipeReq.create(qty:8, supply_list_id:5, surgery_appt_id:i)
+#   ActualRecipeReq.create(qty:4, supply_list_id:6, surgery_appt_id:i)
+# end
 
 
 
