@@ -12,4 +12,8 @@ class ActualRecipeReq < ApplicationRecord
     # end
   end
 
+  def supply_name
+    supply_list.item_name
+  end
+
 end

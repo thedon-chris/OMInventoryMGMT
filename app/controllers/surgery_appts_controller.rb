@@ -59,7 +59,7 @@ class SurgeryApptsController < ApplicationController
           data = params[:surgery_appt][:surgery_recipe_req]
           myhash = Hash[data.keys.zip(data.values)].map {|key, value| [key, value] }
           myhash.each do |update|
-            item = ActualRecipeReq.find(update[0].to_i)
+            item = ActualRecipeReq.where(surgery_appt_id: @surgery_appt.id).where(supply_list_id:(update[0].to_i)).first
             item.update(qty:update[1].to_i)
           end
           puts "********************************************"

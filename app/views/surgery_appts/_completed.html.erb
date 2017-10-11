@@ -25,6 +25,7 @@
     <%= form.text_field :status, value:  @surgery_appt.status%>
     </div>
 
+    <h2>Recipe Values</h2>
     <ul>
        <% @surgery_appt.surgery_type.surgery_recipe_reqs.each do |req| %>
          <%= form.fields_for req do |fa| %>
@@ -34,6 +35,14 @@
            </li>
          <% end %>
        <% end %>
+    </ul>
+    <h2>Actual Values</h2>
+    <ul>
+      <% @surgery_appt.actual_recipe_reqs.each do |actual_req| %>
+        <li>
+          <%= actual_req.supply_name %>, <%= actual_req.qty %>
+        </li>
+      <% end %>
     </ul>
 
   <div class="actions">
