@@ -52,12 +52,16 @@ class SurgeryApptsController < ApplicationController
   def update
     respond_to do |format|
       if @surgery_appt.update(surgery_appt_params)
-        # format.html { redirect_to @surgery_appt, notice: 'Surgery appt was successfully updated.' }
+        format.html { redirect_to @surgery_appt, notice: 'Surgery appt was successfully updated.' }
         format.json { render :show, status: :ok, location: @surgery_appt }
         puts "********************************************"
         if params[:surgery_appt][:status].include? "true"
-          puts "#{params[:surgery_appt][:status]}"
-          puts "parameters are true! wohooo"
+          data = params[:surgery_appt][:surgery_recipe_req]
+          myhash = Hash[data.keys.zip(data.values)].map {|key, value| [key, value] }
+          myhash.each do |update|
+            item = ActualRecipeReq.find(update[0].to_i)
+            item.update(qty:update[1].to_i)
+          end
           puts "********************************************"
         else
           puts "#{params[:surgery_appt][:status]}"
