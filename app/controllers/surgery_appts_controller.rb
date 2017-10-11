@@ -54,21 +54,14 @@ class SurgeryApptsController < ApplicationController
       if @surgery_appt.update(surgery_appt_params)
         format.html { redirect_to @surgery_appt, notice: 'Surgery appt was successfully updated.' }
         format.json { render :show, status: :ok, location: @surgery_appt }
-        puts "********************************************"
-        if params[:surgery_appt][:status].include? "true"
-          data = params[:surgery_appt][:surgery_recipe_req]
-          myhash = Hash[data.keys.zip(data.values)].map {|key, value| [key, value] }
-          myhash.each do |update|
-            item = ActualRecipeReq.where(surgery_appt_id: @surgery_appt.id).where(supply_list_id:(update[0].to_i)).first
-            item.update(qty:update[1].to_i)
-          end
-          @surgery_appt.update(status: false)
 
-          puts "********************************************"
-        else
-          puts "#{params[:surgery_appt][:status]}"
-          puts "parameters are fahh! wohooo"
-          puts "********************************************"
+        if @surgery_appt.status # the surgery is not yet complete
+
+          # TODO: I wish I learned how to use accepts_nested_attributes_for
+          surgery_recipe_reqs_hsh = params[:surgery_appt][:surgery_recipe_req]
+          @surgery_appt.complete_surgery(surgery_recipe_reqs_hsh)
+          #take the acutal reqs
+          #go subtract from inventory
         end
       else
         format.html { render :edit }
