@@ -52,7 +52,7 @@ class SurgeryApptsController < ApplicationController
   def update
     respond_to do |format|
       if @surgery_appt.update(surgery_appt_params)
-        format.html { redirect_to @surgery_appt, notice: 'Surgery appt was successfully updated.' }
+        # format.html { redirect_to @surgery_appt, notice: 'Surgery appt was successfully updated.' }
         format.json { render :show, status: :ok, location: @surgery_appt }
         puts "********************************************"
         if params[:surgery_appt][:status] == true
