@@ -15,5 +15,11 @@
   <%= @surgery_appt.surgery_type %>
 </p>
 
+<p>
+  <strong>Surgery Status:</strong>
+  <%= @surgery_appt.status %>
+</p>
+
+
 <%= link_to 'Edit', edit_surgery_appt_path(@surgery_appt) %> |
 <%= link_to 'Back', surgery_appts_path %>

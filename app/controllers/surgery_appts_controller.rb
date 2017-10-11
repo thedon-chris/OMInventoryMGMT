@@ -55,7 +55,15 @@ class SurgeryApptsController < ApplicationController
         format.html { redirect_to @surgery_appt, notice: 'Surgery appt was successfully updated.' }
         format.json { render :show, status: :ok, location: @surgery_appt }
         puts "********************************************"
-        puts "#{params[:surgery_appt][:status]}"
+        if params[:surgery_appt][:status] == true
+          puts "#{params[:surgery_appt][:status]}"
+          puts "parameters are true! wohooo"
+          puts "********************************************"
+        else
+          puts "#{params[:surgery_appt][:status]}"
+          puts "parameters are fahh! wohooo"
+          puts "********************************************"
+        end
       else
         format.html { render :edit }
         format.json { render json: @surgery_appt.errors, status: :unprocessable_entity }
