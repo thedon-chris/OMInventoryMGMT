@@ -15,18 +15,13 @@ class SurgeryAppt < ApplicationRecord
     @appts = SurgeryAppt.all
   end
 
-
-
-
-
-
-
-
-
-
-
-
-
+  def complete_surgery(surgery_recipe_reqs_hsh)
+    surgery_recipe_reqs_hsh.each do |supply_id, qty|
+      item = self.actual_recipe_reqs.find_by(supply_list_id: supply_id)
+      item.update(qty: qty)
+    end
+    self.update(status: false)
+  end
 
 end
 
