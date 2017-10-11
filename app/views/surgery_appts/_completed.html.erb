@@ -1,0 +1,29 @@
+<h1>Surgery Confirmation</h1>
+<%= form_with(model: @surgery_appt, local: true) do |form| %>
+
+  <p>
+    <strong>Appointment Date:</strong>
+    <%= @surgery_appt.surgery_date %>
+  </p>
+
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status, value:  @surgery_appt.status%>
+   </div>
+
+   <ul>
+     <% @surgery_appt.surgery_type.surgery_recipe_reqs.each do |req| %>
+         <li>
+           <%= label_tag req.supply_list.item_name %>
+           <!-- <%= number_field_tag "#{req.supply_list.item_name}-id", req.id  %> -->
+           <%= number_field_tag req.supply_list.item_name, req.qty %>
+         </li>
+     <% end %>
+   </ul>
+
+  <div class="actions">
+    <%= submit_tag "Update" %>
+  </div>
+
+<% end %>
