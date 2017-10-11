@@ -21,8 +21,10 @@ class SurgeryAppt < ApplicationRecord
       item.update(qty: qty)
 
       inventory = self.clinic.inventories.find_by(supply_list_id:supply_id)
+      inventory_qty = inventory.qty
+      new_qty = inventory_qty -= qty.to_i
+      inventory.update(qty: new_qty)
 
-      inventory.update!(qty:0)
     end
     self.update(status: false)
 
