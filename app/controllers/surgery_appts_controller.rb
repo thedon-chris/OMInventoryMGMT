@@ -62,6 +62,8 @@ class SurgeryApptsController < ApplicationController
             item = ActualRecipeReq.where(surgery_appt_id: @surgery_appt.id).where(supply_list_id:(update[0].to_i)).first
             item.update(qty:update[1].to_i)
           end
+          @surgery_appt.update(status: false)
+
           puts "********************************************"
         else
           puts "#{params[:surgery_appt][:status]}"
