@@ -47,31 +47,6 @@ class SurgeryApptsController < ApplicationController
   def completed
   end
 
-  def completed2
-    respond_to do |format|
-      if @surgery_appt.update(surgery_appt_params)
-        format.html { redirect_to @surgery_appt, notice: 'Surgery appt was successfully updated.' }
-        format.json { render :show, status: :ok, location: @surgery_appt }
-      else
-        format.html { render :edit }
-        format.json { render json: @surgery_appt.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-
-
-    # @surgery_appt = SurgeryAppt.new(surgery_appt_params)
-    # respond_to do |format|
-    #   if @surgery_appt.save
-    #     format.html { redirect_to @surgery_appt, notice: 'Surgery appt was successfully created.' }
-    #     format.json { render :show, status: :created, location: @surgery_appt }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @surgery_appt.errors, status: :unprocessable_entity }
-    #   end
-    # end
-
   # PATCH/PUT /surgery_appts/1
   # PATCH/PUT /surgery_appts/1.json
   def update
@@ -79,6 +54,8 @@ class SurgeryApptsController < ApplicationController
       if @surgery_appt.update(surgery_appt_params)
         format.html { redirect_to @surgery_appt, notice: 'Surgery appt was successfully updated.' }
         format.json { render :show, status: :ok, location: @surgery_appt }
+        puts "********************************************"
+        puts "#{params[:surgery_appt][:status]}"
       else
         format.html { render :edit }
         format.json { render json: @surgery_appt.errors, status: :unprocessable_entity }
@@ -107,3 +84,16 @@ class SurgeryApptsController < ApplicationController
       params.require(:surgery_appt).permit(:surgery_date, :clinic_id, :surgery_type_id, :status)
     end
 end
+
+
+
+    # @surgery_appt = SurgeryAppt.new(surgery_appt_params)
+    # respond_to do |format|
+    #   if @surgery_appt.save
+    #     format.html { redirect_to @surgery_appt, notice: 'Surgery appt was successfully created.' }
+    #     format.json { render :show, status: :created, location: @surgery_appt }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @surgery_appt.errors, status: :unprocessable_entity }
+    #   end
+    # end

@@ -17,6 +17,19 @@ SupplyList.create(item_name: 'Bandages')
 SupplyList.create(item_name: 'Implant')
 SupplyList.create(item_name: 'Silicone Tube')
 
+i=0
+5.times do |i|
+  i+=1
+Inventory.create(qty: 100, clinic_id: i, supply_list_id: 1 )
+Inventory.create(qty: 100, clinic_id: i, supply_list_id: 2 )
+Inventory.create(qty: 100, clinic_id: i, supply_list_id: 3 )
+Inventory.create(qty: 100, clinic_id: i, supply_list_id: 4 )
+Inventory.create(qty: 100, clinic_id: i, supply_list_id: 5 )
+Inventory.create(qty: 100, clinic_id: i, supply_list_id: 6 )
+end
+
+
+
 Clinic.create(clinic_name: "Midtown Breasts")
 Clinic.create(clinic_name:"South Miami Gastro")
 
@@ -42,8 +55,8 @@ end
 s=0
 5.times do |s|
   s+=1
-  SurgeryAppt.create(surgery_date: "2017-10-6", clinic_id:1, surgery_type_id: s)
-  SurgeryAppt.create(surgery_date: "2017-10-7", clinic_id:1, surgery_type_id: s)
+  SurgeryAppt.create(surgery_date: "2017-10-12", clinic_id:1, surgery_type_id: s, status: true)
+  SurgeryAppt.create(surgery_date: "2017-10-13", clinic_id:1, surgery_type_id: s, status: true)
 end
 
 i=0
@@ -58,16 +71,6 @@ i=0
 end
 
 
-i=0
-5.times do |i|
-  i+=1
-Inventory.create(qty: 100, clinic_id: i, supply_list_id: 1 )
-Inventory.create(qty: 100, clinic_id: i, supply_list_id: 2 )
-Inventory.create(qty: 100, clinic_id: i, supply_list_id: 3 )
-Inventory.create(qty: 100, clinic_id: i, supply_list_id: 4 )
-Inventory.create(qty: 100, clinic_id: i, supply_list_id: 5 )
-Inventory.create(qty: 100, clinic_id: i, supply_list_id: 6 )
-end
 
 
 
