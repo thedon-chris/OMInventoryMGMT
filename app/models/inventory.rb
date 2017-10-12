@@ -57,14 +57,10 @@ class Inventory < ApplicationRecord
 
 end
 
-<<<<<<< HEAD
-=======
 
 
 
 
-
->>>>>>> 004782b62dbde3cceba6821557b58036fb3c1285
 # def self.demand(_id, clinic)
 #   inventory = Inventory.where(supply_list_id: _id, clinic: clinic)
 #   return [] if inventory.empty?
