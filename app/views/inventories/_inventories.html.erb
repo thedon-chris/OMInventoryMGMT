@@ -1,13 +1,16 @@
 <h1>Inventories</h1>
 
-<table>
+<div class="container">
+<table class="table">
   <thead>
     <tr>
-      <th>Qty in Stock</th>
+        <th>Qty in Stock</th>
+      </div>
       <th>Clinic</th>
       <th>Supply list</th>
       <th>Out of Stock</th>
       <th>Projected Demand</th>
+      <th>Demand for Next week</th>
       <th>Actual Consumed</th>
 
       <th colspan="3"></th>
@@ -22,6 +25,7 @@
         <td><%= inventory.supply_list.item_name %></td>
         <td><%= inventory.out_of_stock %></td>
         <td><%= inventory.demand %></td>
+        <td><%= inventory.expiration %></td>
         <td><%= inventory.actual_consumed %></td>
         <td><%= link_to 'Show', inventory %></td>
         <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
@@ -30,6 +34,7 @@
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 

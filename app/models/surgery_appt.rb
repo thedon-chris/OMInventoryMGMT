@@ -21,6 +21,13 @@ class SurgeryAppt < ApplicationRecord
   end
 
 
+  def week_group
+    SurgeryAppt.all.group_by_day(:surgery_date)
+  end
+
+
+
+
 
   def appts
     @appts = SurgeryAppt.all
@@ -38,13 +45,11 @@ class SurgeryAppt < ApplicationRecord
 
     end
     self.update(complete: true)
-
-    p "****************************************************"
+    
   end
 
 end
 
-SurgeryAppt.first.clinic.inventories.find_by(supply_list_id:1).qty
 
 # final = []
 # SurgeryAppt.includes(:surgery_type).where(surgery_date: "2017-10-06").each do |stype|
