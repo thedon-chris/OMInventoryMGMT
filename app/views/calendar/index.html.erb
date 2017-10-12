@@ -3,7 +3,7 @@
 
   <% surgery.each do |surgery| %>
     <div>
-      <%= surgery.name%>
+      <%= link_to surgery.name, surgery.surgery_type%>
     </div>
   <% end %>
 <% end %>
