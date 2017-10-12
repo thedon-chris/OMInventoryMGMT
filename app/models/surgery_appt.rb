@@ -11,6 +11,21 @@ class SurgeryAppt < ApplicationRecord
   #     list.surgery_type
   #   end
   # end
+
+  def start_time
+    self.surgery_date
+  end
+
+  def name
+    self.surgery_type.surgery_name
+  end
+
+
+
+
+
+
+
   def appts
     @appts = SurgeryAppt.all
   end
