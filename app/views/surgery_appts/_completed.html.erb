@@ -16,12 +16,12 @@
 
   <p>
     <strong>Appointment Current Status:</strong>
-    <%= @surgery_appt.status %>
+    <%= @surgery_appt.complete %>
     </p>
 
   <div class="field">
     <%= form.label "Click here to mark surgery completed" %>
-    <%= form.check_box :status, value: @surgery_appt.status, :checked => 'unchecked'%>
+    <%= form.check_box :complete, value: @surgery_appt.complete, :checked => 'unchecked'%>
     </div>
 
     <h2>Recipe Values</h2>

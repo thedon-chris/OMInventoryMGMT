@@ -53,7 +53,7 @@ class SurgeryApptsController < ApplicationController
     respond_to do |format|
       if @surgery_appt.update(surgery_appt_params)
 
-        if @surgery_appt.status # the surgery is not yet complete
+        if @surgery_appt.complete # the surgery is not yet complete
           # TODO: I wish I learned how to use accepts_nested_attributes_for
           surgery_recipe_reqs_hsh = params[:surgery_appt][:surgery_recipe_req]
           @surgery_appt.complete_surgery(surgery_recipe_reqs_hsh)
@@ -89,7 +89,7 @@ class SurgeryApptsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def surgery_appt_params
-      params.require(:surgery_appt).permit(:surgery_date, :clinic_id, :surgery_type_id, :status)
+      params.require(:surgery_appt).permit(:surgery_date, :clinic_id, :surgery_type_id, :complete)
     end
 end
 

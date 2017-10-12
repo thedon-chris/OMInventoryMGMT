@@ -18,7 +18,7 @@
   <tbody>
     <% @surgery_appts.each do |surgery_appt| %>
       <tr>
-        <% if surgery_appt.status == true %>
+        <% unless surgery_appt.complete %>
         <td><%= surgery_appt.surgery_date %></td>
         <td><%= surgery_appt.clinic.clinic_name %></td>
         <td><%= surgery_appt.surgery_type.surgery_name %></td>

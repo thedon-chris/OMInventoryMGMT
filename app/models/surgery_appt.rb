@@ -41,7 +41,7 @@ class SurgeryAppt < ApplicationRecord
       inventory.update(qty: new_qty)
 
     end
-    self.update(status: false)
+    self.update(complete: true)
 
     p "****************************************************"
   end
