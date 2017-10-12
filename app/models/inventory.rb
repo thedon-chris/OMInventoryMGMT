@@ -61,7 +61,6 @@ end
 
 
 
-
 # def self.demand(_id, clinic)
 #   inventory = Inventory.where(supply_list_id: _id, clinic: clinic)
 #   return [] if inventory.empty?

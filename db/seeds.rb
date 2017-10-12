@@ -40,13 +40,38 @@ SurgeryType.create(surgery_name: "Brazilian Butt Implants")
 i=0
 5.times do |i|
   i+=1
-  SurgeryRecipeReq.create(qty:4, supply_list_id:1, surgery_type_id:i)
-  SurgeryRecipeReq.create(qty:100, supply_list_id:2, surgery_type_id:i)
-  SurgeryRecipeReq.create(qty:50, supply_list_id:3, surgery_type_id:i)
-  SurgeryRecipeReq.create(qty:10, supply_list_id:4, surgery_type_id:i)
-  SurgeryRecipeReq.create(qty:10, supply_list_id:5, surgery_type_id:i)
-  SurgeryRecipeReq.create(qty:10, supply_list_id:6, surgery_type_id:i)
+  SurgeryRecipeReq.create(qty:4, supply_list_id:1, surgery_type_id:1)
 end
+i=0
+5.times do |i|
+  i+=1
+  SurgeryRecipeReq.create(qty:100, supply_list_id:2, surgery_type_id:2)
+end
+i=0
+5.times do |i|
+  i+=1
+  SurgeryRecipeReq.create(qty:50, supply_list_id:3, surgery_type_id:3)
+end
+i=0
+5.times do |i|
+  i+=1
+  SurgeryRecipeReq.create(qty:10, supply_list_id:4, surgery_type_id:4)
+end
+i=0
+5.times do |i|
+  i+=1
+  SurgeryRecipeReq.create(qty:10, supply_list_id:5, surgery_type_id:5)
+end
+5.times do |i|
+  i+=1
+  SurgeryRecipeReq.create(qty:10, supply_list_id:6, surgery_type_id:6)
+end
+
+
+
+
+
+
 
 
 s=0
@@ -59,11 +84,10 @@ s=0
 l=0
 25.times do
   s+=1
-
   l+=1
   SurgeryAppt.create(surgery_date: "2017-11-#{l}", clinic_id:1, surgery_type_id: "#{rand(1..4)}")
   puts "#{s} appointments created"
-  
+
 end
 
 
