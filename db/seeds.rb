@@ -37,7 +37,6 @@ SurgeryType.create(surgery_name: "Breast Reduction")
 SurgeryType.create(surgery_name: "Brazilian Butt Implants")
 
 
-i=0
 5.times do |i|
   i+=1
   SurgeryRecipeReq.create(qty:4, supply_list_id:1, surgery_type_id:1)
