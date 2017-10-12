@@ -20,8 +20,8 @@
     </p>
 
   <div class="field">
-    <%= form.label :status %>
-    <%= form.check_box :status, value:  @surgery_appt.status%>
+    <%= form.label "Click here to mark surgery completed" %>
+    <%= form.check_box :status, value:  @surgery_appt.status, :checked => 'unchecked'%>
     </div>
 
     <h2>Recipe Values</h2>
