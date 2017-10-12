@@ -13,7 +13,7 @@
   </thead>
 
   <tbody>
-    <% @surgery_appts.each do |surgery_appt| %>
+    <%= date %><% @surgery_appts.each do |surgery_appt| %>
       <tr>
         <td><%= surgery_appt.surgery_date %></td>
         <td><%= surgery_appt.clinic.clinic_name %></td>
