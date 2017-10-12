@@ -17,6 +17,10 @@ SupplyList.create(item_name: 'Bandages')
 SupplyList.create(item_name: 'Implant')
 SupplyList.create(item_name: 'Silicone Tube')
 
+
+
+
+
 Clinic.create(clinic_name: "Midtown Breasts")
 Clinic.create(clinic_name:"South Miami Gastro")
 
