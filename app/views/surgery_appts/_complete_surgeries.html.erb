@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Surgery Appts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Surgery date</th>
+      <th>Clinic</th>
+      <th>Surgery type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+    <% @surgery_appts.each do |surgery_appt| %>
+      <tr>
+        <% if surgery_appt.status == true %>
+        <td><%= surgery_appt.surgery_date %></td>
+        <td><%= surgery_appt.clinic.clinic_name %></td>
+        <td><%= surgery_appt.surgery_type.surgery_name %></td>
+        <td><%= link_to 'Show', surgery_appt %></td>
+        <td><%= link_to 'Edit', edit_surgery_appt_path(surgery_appt) %></td>
+        <td><%= link_to 'Destroy', surgery_appt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Complete', completed_path(surgery_appt.id) %></td>
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Surgery Appt', new_surgery_appt_path %>
