@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'calendar/index'
+  get 'calendar/week'
 
   root 'page#index'
 
