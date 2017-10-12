@@ -11,6 +11,8 @@
       <th>Supply list</th>
       <th>Out of Stock</th>
       <th>Projected Demand</th>
+      <th>Actual Consumed</th>
+
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,6 +25,7 @@
         <td><%= inventory.supply_list.item_name %></td>
         <td><%= inventory.out_of_stock %></td>
         <td><%= inventory.demand %></td>
+        <td><%= inventory.actual_consumed %></td>
         <td><%= link_to 'Show', inventory %></td>
         <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
         <td><%= link_to 'Destroy', inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>

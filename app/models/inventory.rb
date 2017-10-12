@@ -27,7 +27,9 @@ class Inventory < ApplicationRecord
     self.clinic.surgery_appts.where(status:false).each do |appt|
       appt.actual_recipe_reqs.where(supply_list_id:item_number).each do |req|
         qty += req.qty
+      end
     end
+    qty
   end
 
 
