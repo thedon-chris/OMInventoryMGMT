@@ -20,7 +20,6 @@ SupplyList.create(item_name: 'Silicone Tube')
 
 
 
-
 Clinic.create(clinic_name: "Midtown Breasts")
 Clinic.create(clinic_name:"South Miami Gastro")
 
@@ -51,10 +50,20 @@ end
 
 
 s=0
-10.times do |s|
+10.times do
   s+=1
-  SurgeryAppt.create(surgery_date: "2017-10-14", clinic_id:1, surgery_type_id: s, status: true)
+  SurgeryAppt.create(surgery_date: "2017-10-14", clinic_id:1, surgery_type_id: s)
 end
+
+s=0
+l=0
+25.times do
+  s+=1
+  l+=1
+  SurgeryAppt.create(surgery_date: "2017-11-#{l}", clinic_id:1, surgery_type_id: "#{rand(1..4)}")
+  puts "#{s} appointments created"
+end
+
 
 # i=0
 # 5.times do |i|
