@@ -6,7 +6,8 @@ class Inventory < ApplicationRecord
 
   def out_of_stock
     if self.qty <= 0
-      "ITEM OUT OF STOCK - #{self.supply_list.item_name}"
+      "ITEM OUT OF STOCK"
+      # "ITEM OUT OF STOCK - #{self.supply_list.item_name}"
     end
   end
 
