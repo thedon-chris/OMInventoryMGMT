@@ -7,17 +7,20 @@
 
 <p>
   <strong>Clinic:</strong>
-  <%= @surgery_appt.clinic %>
+  <%= @surgery_appt.clinic.clinic_name %>
 </p>
 
 <p>
   <strong>Surgery type:</strong>
-  <%= @surgery_appt.surgery_type %>
+  <%= @surgery_appt.surgery_type.surgery_name %>
 </p>
 
 <p>
   <strong>Surgery Status:</strong>
   <%= @surgery_appt.complete %>
+  <% unless @surgery_appt.complete %>
+    <td><strong><%= link_to 'Complete', completed_path(@surgery_appt.id) %></strong></td>
+  <% end %>
 </p>
 
 
