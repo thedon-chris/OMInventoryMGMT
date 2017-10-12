@@ -33,10 +33,6 @@ class Inventory < ApplicationRecord
     qty
   end
 
-  def time
-
-  end
-
   # one_week = time.state.from_now
   #
   # one_month = 1.month.from_now
