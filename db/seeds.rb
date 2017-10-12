@@ -86,7 +86,14 @@ l=0
   l+=1
   SurgeryAppt.create(surgery_date: "2017-11-#{l}", clinic_id:1, surgery_type_id: "#{rand(1..4)}")
   puts "#{s} appointments created"
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
 
+>>>>>>> 2c10d75e3e976817e2802169bf4e87495fa24e14
+=======
+
+>>>>>>> ec9af4458948cce917550127d127357c526ecc73
 end
 
 
