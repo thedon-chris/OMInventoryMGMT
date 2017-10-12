@@ -49,7 +49,7 @@ end
 s=0
 10.times do |s|
   s+=1
-  SurgeryAppt.create(surgery_date: "2017-10-14", clinic_id:1, surgery_type_id: s, status: true)
+  SurgeryAppt.create(surgery_date: "2017-10-14", clinic_id:1, surgery_type_id: s)
 end
 
 # i=0
