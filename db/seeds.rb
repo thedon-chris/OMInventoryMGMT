@@ -59,9 +59,11 @@ s=0
 l=0
 25.times do
   s+=1
+
   l+=1
   SurgeryAppt.create(surgery_date: "2017-11-#{l}", clinic_id:1, surgery_type_id: "#{rand(1..4)}")
   puts "#{s} appointments created"
+  
 end
 
 
