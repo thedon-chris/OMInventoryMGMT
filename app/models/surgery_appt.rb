@@ -22,10 +22,6 @@ class SurgeryAppt < ApplicationRecord
 
 
 
-
-
-
-
   def appts
     @appts = SurgeryAppt.all
   end
