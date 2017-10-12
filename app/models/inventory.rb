@@ -4,7 +4,11 @@ class Inventory < ApplicationRecord
 
   validates :qty, presence: true
 
-
+  def out_of_stock
+    if self.qty <= 0
+      "ITEM OUT OF STOCK - #{self.supply_list.item_name}"
+    end
+  end
 
 end
 
