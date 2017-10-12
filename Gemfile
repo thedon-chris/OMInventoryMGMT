@@ -62,3 +62,6 @@ gem "rails-erd", "~> 1.5"
 
 # Added at 2017-10-09 10:54:24 -0400 by christopherarguello:
 gem "wirble", "~> 0.1.3"
+
+# Added at 2017-10-12 17:03:49 -0400 by christopherarguello:
+gem "groupdate", "~> 3.2"
