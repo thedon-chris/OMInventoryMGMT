@@ -35,19 +35,6 @@ class Inventory < ApplicationRecord
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 end
 
 # def self.demand(_id, clinic)
