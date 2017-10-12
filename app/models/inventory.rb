@@ -18,6 +18,7 @@ class Inventory < ApplicationRecord
         qty += req.qty
       end
     end
+    qty
   end
 
 
