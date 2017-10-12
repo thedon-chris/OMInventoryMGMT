@@ -1,19 +1,44 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Qty:</strong>
-  <%= @inventory.qty %>
-</p>
 
-<p>
-  <strong>Clinic:</strong>
-  <%= @inventory.clinic %>
-</p>
 
-<p>
-  <strong>Supply list:</strong>
-  <%= @inventory.supply_list %>
-</p>
 
-<%= link_to 'Edit', edit_inventory_path(@inventory) %> |
-<%= link_to 'Back', inventories_path %>
+<strong>Qty:</strong>
+<strong>Clinic:</strong>
+<strong>Supply list:</strong>
+
+
+
+
+<%= @inventory.qty %>
+<%= @inventory.clinic %>
+<%= @inventory.supply_list %>
+
+
+
+
+
+
+
+<!--
+<div class="container">
+  <div class="row">
+    <div class="col">
+      1 of 2
+    </div>
+    <div class="col">
+      2 of 2
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      1 of 3
+    </div>
+    <div class="col">
+      2 of 3
+    </div>
+    <div class="col">
+      3 of 3
+    </div>
+  </div>
+</div> -->
