@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'calendar/index'
+
   root 'page#index'
 
   get 'completed/:id' => 'surgery_appts#completed', as: 'completed'

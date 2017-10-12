@@ -21,7 +21,7 @@
         <td><%= link_to 'Show', surgery_appt %></td>
         <td><%= link_to 'Edit', edit_surgery_appt_path(surgery_appt) %></td>
         <td><%= link_to 'Destroy', surgery_appt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% if surgery_appt.status == true %>
+        <% if surgery_appt.complete == true %>
           <td><%= link_to 'Complete', completed_path(surgery_appt.id) %></td>
         <% end %>
       </tr>
