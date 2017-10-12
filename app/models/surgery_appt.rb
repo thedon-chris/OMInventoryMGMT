@@ -21,6 +21,13 @@ class SurgeryAppt < ApplicationRecord
   end
 
 
+  def week_group
+    SurgeryAppt.all.group_by_day(:surgery_date)
+  end
+
+
+
+
 
   def appts
     @appts = SurgeryAppt.all
