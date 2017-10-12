@@ -45,7 +45,7 @@ class SurgeryAppt < ApplicationRecord
 
     end
     self.update(complete: true)
-    
+
   end
 
 end
