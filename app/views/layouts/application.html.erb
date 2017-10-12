@@ -16,7 +16,7 @@
     <% end %>
 
     <% if current_user %>
-      Signed in as <%= current_user.name %> | <%= link_to 'Surgery Appointments', surgery_appts_path %> | <%= link_to 'Surgery Types', surgery_types_path %> | <%= link_to 'Inventory', inventories_path %> | <%= link_to 'Supply List', supply_lists_path %>
+      Signed in as <%= current_user.name %> | <%= link_to 'Home', root_path %> | <%= link_to 'Surgery Appointments', surgery_appts_path %> | <%= link_to 'Surgery Types', surgery_types_path %> | <%= link_to 'Inventory', inventories_path %> | <%= link_to 'Supply List', supply_lists_path %>
 
     <% end %>
     <%= yield %>
