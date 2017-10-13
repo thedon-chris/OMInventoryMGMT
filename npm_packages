@@ -1,0 +1,12 @@
+# Browserify is required.
+# You can install it globally and delete from here.
+npm 'browserify', require: false, development: true
+
+# Add some npm packages
+
+npm 'react'
+npm 'chart.js'
+
+
+
+npm 'browserify', require: false, development: true
