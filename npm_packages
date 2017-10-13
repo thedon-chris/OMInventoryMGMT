@@ -4,9 +4,8 @@ npm 'browserify', require: false, development: true
 
 # Add some npm packages
 
-npm 'react'
 npm 'chart.js'
-npm 'bootstrap'
+
 npm 'jquery'
 
 
