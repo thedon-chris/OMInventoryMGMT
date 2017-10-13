@@ -65,3 +65,8 @@ gem "wirble", "~> 0.1.3"
 
 # Added at 2017-10-12 17:03:49 -0400 by christopherarguello:
 gem "groupdate", "~> 3.2"
+
+# Added at 2017-10-13 11:37:11 -0400 by christopherarguello:
+gem "npm-pipeline-rails", "~> 1.8"
+
+gem 'webpacker', '~> 3.0'
