@@ -17,8 +17,11 @@
 //= require turbolinks
 //= require_tree .
 
+
+
+<canvas id="myChart" width="400" height="400"></canvas>
+var ctx = $("#myChart");
 <script>
-var ctx = document.getElementById("myChart").getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {

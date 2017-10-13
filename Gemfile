@@ -72,3 +72,6 @@ gem "npm-pipeline-rails", "~> 1.8"
 
 # Added at 2017-10-13 11:54:41 -0400 by christopherarguello:
 gem "npm-rails", "~> 0.2.1"
+
+# Added at 2017-10-13 12:23:08 -0400 by christopherarguello:
+gem "chartjs-ror", "~> 3.3"
