@@ -11,9 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= require simple_calendar
- *= require_self
  *= require bootstrap/dist/css/bootstrap.css
+ *= require_self
  *= require_tree .
  */
-.col { border: 1px solid transparent; }
-.col { background-color: lightblue; }

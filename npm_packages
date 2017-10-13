@@ -6,6 +6,8 @@ npm 'browserify', require: false, development: true
 
 npm 'react'
 npm 'chart.js'
+npm 'bootstrap'
+npm 'jquery'
 
 
 
