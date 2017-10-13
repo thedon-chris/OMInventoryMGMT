@@ -34,7 +34,6 @@ class Inventory < ApplicationRecord
   end
 
   # one_week = time.state.from_now
-  #
   # one_month = 1.month.from_now
   # one_year = 1.year.from_now
 
@@ -49,6 +48,15 @@ class Inventory < ApplicationRecord
     end
     qty
   end
+
+
+
+
+
+
+
+
+
 
 end
 
