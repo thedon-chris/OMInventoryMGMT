@@ -50,8 +50,6 @@ s=0
 10.times do
   s+=1
   SurgeryAppt.create(surgery_date: "2017-10-14", clinic_id:1, surgery_type_id: s)
-  ActualRecipeReq.create(qty:6, supply_list_id:1, surgery_appt_id:s)
-
 end
 
 s=0
@@ -61,7 +59,6 @@ l=0
   l+=1
   SurgeryAppt.create(surgery_date: "2017-11-#{l}", clinic_id:1, surgery_type_id: "#{rand(1..4)}")
   puts "#{s} appointments created"
-  ActualRecipeReq.create(qty:6, supply_list_id:1, surgery_appt_id:s)
 end
 
 
