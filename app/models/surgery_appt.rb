@@ -37,10 +37,6 @@ class SurgeryAppt < ApplicationRecord
     SurgeryAppt.all.group_by_day(:surgery_date)
   end
 
-
-
-
-
   def appts
     @appts = SurgeryAppt.all
   end
