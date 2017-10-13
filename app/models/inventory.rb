@@ -46,7 +46,7 @@ class Inventory < ApplicationRecord
     qty = 0
     x = "#{time}".to_i.send(:"#{state}").from_now
     item_number = self.supply_list_id
-    self.clinic.surgery_appts.where(complete:false).where('surgery_date > ?', x).each do |appt|
+    self.clinic.surgery_appts.where(complete:false).where('surgery_date < ?', x).each do |appt|
       appt.surgery_type.surgery_recipe_reqs.where(supply_list_id:item_number).each do |req|
         qty += req.qty
       end
