@@ -86,22 +86,6 @@
             </div>
         </div>
     </div>
-
-
-      <%= link_to 'Login', '/login' %>
-      <%= link_to 'Signup', '/signup' %>
-
-    <% if current_user %>
-      Signed in as <%= current_user.name %>
-
-       <%= link_to 'Surgery Appointments', surgery_appts_path %>
-       <%= link_to 'Surgery Types', surgery_types_path %>
-       <%= link_to 'Inventory', inventories_path %>
-       <%= link_to 'Supply List', supply_lists_path %>
-       <%= link_to 'Calendar', calendar_index_path %>
-
-    <% end %>
     <%= yield %>
-
   </body>
 </html>
