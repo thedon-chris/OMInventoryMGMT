@@ -50,7 +50,6 @@ class Inventory < ApplicationRecord
     qty
   end
 
-
 end
 
 
