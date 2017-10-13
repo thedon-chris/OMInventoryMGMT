@@ -5,12 +5,24 @@ class SurgeryAppt < ApplicationRecord
 
   validates :surgery_date, presence: true
 
-  # def demand
-  #   @appts = SurgeryAppt.all
-  #   @appts.each do |list|
-  #     list.surgery_type
-  #   end
-  # end
+
+  after_create :sequence
+  def sequence
+    SurgeryType.find(self.surgery_type_id).surgery_recipe_reqs.each do |req|
+      supply_item = req.supply_list_id
+      ActualRecipeReq.create(
+        qty:0,
+        supply_list_id:supply_item,
+        surgery_appt_id:self.id)
+      end
+  end
+
+
+
+
+
+
+
 
   def start_time
     self.surgery_date
