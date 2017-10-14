@@ -1,31 +1,35 @@
 <%= form_with(model: surgery_type, local: true) do |form| %>
-  <% if surgery_type.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(surgery_type.errors.count, "error") %> prohibited this surgery_type from being saved:</h2>
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                  <div class="card-header" data-background-color="purple">
+                      <h4 class="title">Edit Surgery Recipe</h4>
+                      <p class="category"></p>
+                  </div>
+                  <div class="card-content">
+                      <% @surgery_recipe_reqs.each do |req| %>
+                        <form>
+                          <!-- this is the SurgeryAppt type field -->
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="form-group label-floating is-empty">
+                                <label class="control-label"><%#= form.label :surgery_type_id %></label>
+                                  <%= form_with(model: req, local: true, method: 'put', data: {remote: true}, class: "req_#{req.id}") do |form| %>
+                                    <%= form.object.supply_list.item_name %>
+                                    <%= form.number_field :qty %>
+                                    <!-- <%= submit_tag "Update" %> -->
+                                    <button type="submit" class="btn btn-primary ">Update</button>
 
-      <ul>
-      <% surgery_type.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+                            <% end %>
+                          <% end %>
+                        <div class="clearfix"></div>
+                      </form>
+                  </div>
+                </div>
+            </div>
+        </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :surgery_name %>
-    <%= form.text_field :surgery_name, id: :surgery_type_surgery_name %>
-  </div>
-
+</div>
 <% end %>
-
-<ul>
-  <% @surgery_recipe_reqs.each do |req| %>
-    <%= form_with(model: req, local: true, method: 'put', data: {remote: true}, class: "req_#{req.id}") do |form| %>
-      <li>
-        <%= form.object.supply_list.item_name %>
-        <%= form.number_field :qty %>
-      </li>
-      <%= submit_tag "Update" %>
-    <% end %>
-  <% end %>
-</ul>
