@@ -14,10 +14,12 @@
           <%= month_calendar events: @surgery_appt do |date, surgery| %>
             <%= date %>
 
+
             <% surgery.each do |surgery| %>
               <div>
                 <%= link_to surgery.name, surgery %>
               </div>
+
             <% end %>
           <% end %>
 
