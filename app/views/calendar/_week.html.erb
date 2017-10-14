@@ -9,10 +9,9 @@
               <h4 class="title">Day Calendar</h4>
               <p class="category">View Appointments 1 day</p>
           </div>
-
+          <br>
           <%= calendar number_of_days: 1, events: @surgery_appt do |date, surgery| %>
             <%= date %>
-
             <% surgery.each do |surgery| %>
               <div>
                 <%= link_to surgery.name, surgery %>
