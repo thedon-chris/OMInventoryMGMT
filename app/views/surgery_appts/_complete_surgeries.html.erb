@@ -1,28 +1,47 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th>Clinic</th>
-      <th>Surgery type</th>
-      <th>Surgery date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
 
 
-  <tbody>
-    <% @surgery_appts.each do |surgery_appt| %>
-      <tr>
-        <% unless surgery_appt.complete %>
-        <td><%= surgery_appt.clinic.clinic_name %></td>
-        <td><%= link_to surgery_appt.surgery_type.surgery_name, surgery_appt %></td>
-        <td><%= surgery_appt.surgery_date %></td>
-          <td><%= link_to 'Complete', completed_path(surgery_appt.id) %></td>
-      </tr>
-    <% end %>
-    <% end %>
-  </tbody>
-</table>
+          <div class="card-header" data-background-color="purple">
+              <h4 class="title">Simple Table</h4>
+              <p class="category">Here is a subtitle for this table</p>
+          </div>
 
-<br>
+          <div class="card-content table-responsive">
 
-<%= link_to 'New Surgery Appt', new_surgery_appt_path %>
+            <table class="table">
+
+              <thead class="text-primary">
+                <tr>
+                  <th>Clinic</th>
+                  <th>Surgery type</th>
+                  <th>Surgery date</th>
+                </tr>
+              </thead>
+
+
+              <tbody>
+                <% @surgery_appts.each do |surgery_appt| %>
+                  <tr>
+                    <% unless surgery_appt.complete %>
+                    <td><%= surgery_appt.clinic.clinic_name %></td>
+                    <td><%= link_to surgery_appt.surgery_type.surgery_name, surgery_appt %></td>
+                    <td><%= surgery_appt.surgery_date %></td>
+                      <td><%= link_to 'Complete', completed_path(surgery_appt.id) %></td>
+                  </tr>
+                <% end %>
+                <% end %>
+              </tbody>
+
+            </table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
