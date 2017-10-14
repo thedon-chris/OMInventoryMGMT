@@ -3,6 +3,17 @@ class SurgeryApptsController < ApplicationController
 
   # GET /surgery_appts
   # GET /surgery_appts.json
+
+
+  def table
+  end
+
+
+
+
+
+
+
   def index
     @surgery_appts = SurgeryAppt.all
   end
