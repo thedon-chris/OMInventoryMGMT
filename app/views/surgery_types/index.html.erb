@@ -1,27 +1,28 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Surgery Types</h1>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Surgery name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @surgery_types.each do |surgery_type| %>
-      <tr>
-        <td><%= surgery_type.surgery_name %></td>
-        <td><%= link_to 'Show', surgery_type %></td>
-        <td><%= link_to 'Edit', edit_surgery_type_path(surgery_type) %></td>
-        <td><%= link_to 'Destroy', surgery_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Surgery Type', new_surgery_type_path %>
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header" data-background-color="purple">
+              <h4 class="title">Simple Table</h4>
+              <p class="category">Here is a subtitle for this table</p>
+          </div>
+          <div class="card-content table-responsive">
+            <table class="table">
+              <thead class="text-primary">
+                  <th>Surgery name</th>
+              </thead>
+              <tbody>
+                <% @surgery_types.each do |surgery_type| %>
+                  <tr>
+                    <td><%= link_to surgery_type.surgery_name, edit_surgery_type_path(surgery_type) %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

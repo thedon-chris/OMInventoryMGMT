@@ -9,11 +9,6 @@ class SurgeryApptsController < ApplicationController
   end
 
 
-
-
-
-
-
   def index
     @surgery_appts = SurgeryAppt.all
   end
@@ -43,6 +38,7 @@ class SurgeryApptsController < ApplicationController
   def create
     @surgery_appt = SurgeryAppt.new(surgery_appt_params)
       if @surgery_appt.save
+        redirect_to surgery_appts_path
         # SurgeryType.find(@surgery_appt.surgery_type_id).surgery_recipe_reqs.each do |req|
         #   supply_item = req.supply_list_id
         #   ActualRecipeReq.create(
