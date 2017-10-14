@@ -1,61 +1,36 @@
-<div class="card-content table-responsive">
-<table class="table">
-  <thead class="text-warning">
-      <th>Surgery date</th>
-      <th>Clinic</th>
-      <th>Surgery type</th>
-  </thead>
-  <tbody>
-    <% @surgery_appts.each do |surgery_appt| %>
-      <tr>
-        <td><%= surgery_appt.surgery_date %></td>
-        <td><%= surgery_appt.clinic.clinic_name %></td>
-        <td><%= surgery_appt.surgery_type.surgery_name %></td>
-        <td><%= link_to 'Show', surgery_appt %></td>
-        <td><%= link_to 'Edit', edit_surgery_appt_path(surgery_appt) %></td>
-        <td><%= link_to 'Delete', surgery_appt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% unless surgery_appt.complete %>
-          <td><%= link_to 'Complete', completed_path(surgery_appt.id) %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header" data-background-color="purple">
+              <h4 class="title">Simple Table</h4>
+              <p class="category">Here is a subtitle for this table</p>
+          </div>
+          <div class="card-content table-responsive">
+            <table class="table">
+              <thead class="text-primary">
+                  <th>Surgery date</th>
+                  <th>Clinic</th>
+                  <th>Surgery type</th>
+              </thead>
+              <tbody>
+                <% @surgery_appts.each do |surgery_appt| %>
+                  <tr>
+                    <td><%= link_to surgery_appt.surgery_date, surgery_appt  %></td>
+                    <td><%= link_to surgery_appt.clinic.clinic_name, surgery_appt  %></td>
+                    <td><%= link_to surgery_appt.surgery_type.surgery_name, surgery_appt  %></td>
+                    <td><%= link_to 'Delete', surgery_appt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    <% unless surgery_appt.complete %>
+                      <td><%= link_to 'Complete', completed_path(surgery_appt.id) %></td>
+                    <% end %>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-
-    <!-- <table class="table table-hover"> -->
-        <!-- <thead class="text-warning">
-            <th>ID</th>
-            <th>Name</th>
-            <th>Salary</th>
-            <th>Country</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Dakota Rice</td>
-                <td>$36,738</td>
-                <td>Niger</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Minerva Hooper</td>
-                <td>$23,789</td>
-                <td>Curaçao</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Sage Rodriguez</td>
-                <td>$56,142</td>
-                <td>Netherlands</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Philip Chaney</td>
-                <td>$38,735</td>
-                <td>Korea, South</td>
-            </tr>
-        </tbody>
-    </table> -->
-<!--  -->
