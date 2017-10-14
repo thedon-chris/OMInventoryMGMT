@@ -41,22 +41,24 @@ class SurgeryTypesController < ApplicationController
   # PATCH/PUT /surgery_types/1
   # PATCH/PUT /surgery_types/1.json
   def update
+    self.surgery_recipe_reqs
     @surgery_type.surgery_recipe_reqs.each do |recip_req|
       update(qty: params["#{recip_req.name}"])
     end
+  end
 
     ### OLD UPDATE
-    respond_to do |format|
-      if @surgery_type.update(surgery_type_params)
-        format.html { redirect_to @surgery_type, notice: 'Surgery type was successfully updated.' }
-        format.json { render :show, status: :ok, location: @surgery_type }
-      else
-        format.html { render :edit }
-        format.json { render json: @surgery_type.errors, status: :unprocessable_entity }
-      end
-    end
-    ### OLD UPDATE
-  end
+  #   respond_to do |format|
+  #     if @surgery_type.update(surgery_type_params)
+  #       format.html { redirect_to @surgery_type, notice: 'Surgery type was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @surgery_type }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @surgery_type.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  #   ### OLD UPDATE
+  # end
 
   # DELETE /surgery_types/1
   # DELETE /surgery_types/1.json
