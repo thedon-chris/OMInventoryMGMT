@@ -28,7 +28,7 @@ Inventory.create(qty: 100, clinic_id: 1, supply_list_id: 5 )
 Inventory.create(qty: 100, clinic_id: 1, supply_list_id: 6 )
 
 SurgeryType.create(surgery_name: "Endoscopy")
-SurgeryType.create(surgery_name: "Colonoscopy")
+SurgeryType.create(surgery_name: "Colono4scopy")
 SurgeryType.create(surgery_name: "Enteroscopy")
 SurgeryType.create(surgery_name: "Upper Endoscopy")
 SurgeryType.create(surgery_name: "Ostomy Exam")
