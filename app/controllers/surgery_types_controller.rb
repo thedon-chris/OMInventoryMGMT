@@ -41,9 +41,9 @@ class SurgeryTypesController < ApplicationController
   # PATCH/PUT /surgery_types/1
   # PATCH/PUT /surgery_types/1.json
   def update
-    self.surgery_recipe_reqs
-    @surgery_type.surgery_recipe_reqs.each do |recip_req|
-      update(qty: params["#{recip_req.name}"])
+    @surgery_type.surgery_recipe_reqs
+    @surgery_type.surgery_recipe_reqs.where(supply_list_id: params[:id]).each do |srr|
+      srr.update!(qty: params[:surgery_recipe_req][:qty])
     end
   end
 
@@ -78,6 +78,6 @@ class SurgeryTypesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def surgery_type_params
-      params.require(:surgery_type).permit(:surgery_name)
+      params.require(:surgery_type).permit(:surgery_name, :qty)
     end
 end
