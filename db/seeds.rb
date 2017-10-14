@@ -18,8 +18,7 @@ SupplyList.create(item_name: 'Implant')
 SupplyList.create(item_name: 'Silicone Tube')
 
 
-Clinic.create(clinic_name: "Midtown Breasts")
-Clinic.create(clinic_name:"South Miami Gastro")
+Clinic.create(clinic_name: "South Miami Gastro")
 
 Inventory.create(qty: 100, clinic_id: 1, supply_list_id: 1 )
 Inventory.create(qty: 100, clinic_id: 1, supply_list_id: 2 )
@@ -29,10 +28,10 @@ Inventory.create(qty: 100, clinic_id: 1, supply_list_id: 5 )
 Inventory.create(qty: 100, clinic_id: 1, supply_list_id: 6 )
 
 SurgeryType.create(surgery_name: "Endoscopy")
-SurgeryType.create(surgery_name: "Breast Aug")
-SurgeryType.create(surgery_name: "Liposuction")
-SurgeryType.create(surgery_name: "Breast Reduction")
-SurgeryType.create(surgery_name: "Brazilian Butt Implants")
+SurgeryType.create(surgery_name: "Colonoscopy")
+SurgeryType.create(surgery_name: "Enteroscopy")
+SurgeryType.create(surgery_name: "Upper Endoscopy")
+SurgeryType.create(surgery_name: "Ostomy Exam")
 
 
 5.times do |i|
@@ -46,19 +45,21 @@ SurgeryType.create(surgery_name: "Brazilian Butt Implants")
 end
 
 
-s=0
-10.times do
-  s+=1
-  SurgeryAppt.create(surgery_date: "2017-10-14", clinic_id:1, surgery_type_id: s)
-end
+# s=0
+# 10.times do
+#   s+=1
+#   SurgeryAppt.create(surgery_date: "2017-10-14", clinic_id:1, surgery_type_id: s)
+# end
 
 s=0
-l=0
+l=15
 25.times do
-  s+=1
   l+=1
-  SurgeryAppt.create(surgery_date: "2017-11-#{l}", clinic_id:1, surgery_type_id: "#{rand(1..4)}")
-  puts "#{s} appointments created"
+  # s+=1
+  5.times do
+    SurgeryAppt.create(surgery_date: "2017-10-#{l}", clinic_id:1, surgery_type_id: "#{rand(1..4)}")
+  end
+  # puts "#{s} appointments created"
 end
 
 
