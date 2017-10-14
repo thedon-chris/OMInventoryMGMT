@@ -1,43 +1,56 @@
-<h1>Surgery Confirmation</h1>
 <%= form_with(model: @surgery_appt, local: true) do |form| %>
 
-  <p>
-    <strong>Clinic:</strong>
-    <%= @surgery_appt.clinic.clinic_name %>
-    </p>
-  <p>
-    <strong>Appointment Date:</strong>
-    <%= @surgery_appt.surgery_date %>
-    </p>
-  <p>
-    <strong>Appointment Type:</strong>
-    <%= @surgery_appt.surgery_type.surgery_name %>
-  </p>
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
 
-  <p>
-    <strong>Appointment Current Status:</strong>
-    <%= @surgery_appt.complete %>
-    </p>
 
-  <div class="field">
-    <%= form.label "Click here to mark surgery completed" %>
-    <%= form.check_box :complete, value: @surgery_appt.complete, :checked => 'unchecked'%>
-    </div>
+          <div class="card-header" data-background-color="purple">
+              <h4 class="title">Complete Surgery</h4>
+              <p class="category">Update Surgery Values</p>
+          </div>
 
-    <h2>Recipe Values</h2>
-    <ul>
-       <% @surgery_appt.surgery_type.surgery_recipe_reqs.each do |req| %>
-         <%= form.fields_for req do |fa| %>
-           <li class="field">
-             <%= fa.label req.supply_list.item_name %>
-             <%= fa.text_field req.supply_list.id, value: req.qty %>
-           </li>
-         <% end %>
-       <% end %>
-    </ul>
 
-  <div class="actions">
-    <%= submit_tag "Update" %>
-    </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group label-floating is-empty">
+                <%= form.label "Click here to mark surgery completed" %>
+                <%= form.check_box :complete, value: @surgery_appt.complete, :checked => 'unchecked'%>
+                <span class="material-input"></span>
+              </div>
+            </div>
+          </div>
+
+
+            <!-- <div class="form-group label-floating is-empty"> -->
+              <% @surgery_appt.surgery_type.surgery_recipe_reqs.each do |req| %>
+                <%= form.fields_for req do |fa| %>
+
+                <%= fa.label req.supply_list.item_name %>
+                <%= fa.text_field req.supply_list.id, value: req.qty %>
+
+               <% end %>
+              <% end %>
+
+
+
+       <div class="row">
+         <div class="col-md-6">
+           <div class="form-group label-floating is-empty">
+             <%= submit_tag "Update" %>
+             <span class="material-input"></span>
+           </div>
+         </div>
+       </div>
+
+
 
 <% end %>
+
+</div>
+</div>
+</div>
+</div>
+</div>

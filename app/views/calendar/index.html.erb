@@ -1,9 +1,27 @@
-<%= month_calendar events: @surgery_appt do |date, surgery| %>
-  <%= date %>
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
 
-  <% surgery.each do |surgery| %>
-    <div>
-      <%= link_to surgery.name, surgery %>
+
+          <div class="card-header" data-background-color="purple">
+              <h4 class="title">Calendar</h4>
+              <p class="category">All Appointments Below</p>
+          </div>
+
+          <%= month_calendar events: @surgery_appt do |date, surgery| %>
+            <%= date %>
+
+            <% surgery.each do |surgery| %>
+              <div>
+                <%= link_to surgery.name, surgery %>
+              </div>
+            <% end %>
+          <% end %>
+
+        </div>
+      </div>
     </div>
-  <% end %>
-<% end %>
+  </div>
+</div>
