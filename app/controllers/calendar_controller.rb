@@ -7,4 +7,7 @@ class CalendarController < ApplicationController
     @surgery_appt = SurgeryAppt.all
   end
 
+  def test
+  end
+  
 end

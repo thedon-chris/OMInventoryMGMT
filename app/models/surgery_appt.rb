@@ -18,6 +18,28 @@ class SurgeryAppt < ApplicationRecord
   end
 
 
+
+
+  def day
+  end
+
+  def month
+  end
+
+  def year
+  end
+
+
+
+
+
+
+
+
+
+
+
+
   def start_time
     self.surgery_date
   end

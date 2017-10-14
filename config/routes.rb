@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  get 'calendar/test'
   get 'calendar/index'
   get 'calendar/week'
 
