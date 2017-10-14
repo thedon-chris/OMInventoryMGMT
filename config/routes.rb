@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   get 'calendar/test'
+  get 'calendar/month'
+
   get 'surgery_appts/table'
 
   get 'calendar/index'
