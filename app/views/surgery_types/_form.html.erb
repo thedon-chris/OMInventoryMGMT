@@ -10,38 +10,33 @@
 
 
 
-<%= form_with(model: surgery_type, local: true) do |form| %>
 <div class="content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="card">
-                  <div class="card-header" data-background-color="purple">
-                      <h4 class="title">Edit Surgery Recipe</h4>
-                      <p class="category"></p>
-                  </div>
-                  <div class="card-content">
-                      <% @surgery_recipe_reqs.each do |req| %>
-                        <form>
-                          <!-- this is the SurgeryAppt type field -->
-                          <div class="row">
-                            <div class="col-md-12">
-                              <div class="form-group label-floating is-empty">
-                                <label class="control-label"><%#= form.label :surgery_type_id %></label>
-                                  <%= form_with(model: req, local: true, method: 'put', data: {remote: true}, class: "req_#{req.id}") do |form| %>
-                                    <%= form.object.supply_list.item_name %>
-                                    <%= form.number_field :qty %>
-                                    <!-- <%= submit_tag "Update" %> -->
-                                    <button type="submit" class="btn btn-primary ">Update</button>
-
-                            <% end %>
-                          <% end %>
-                        <div class="clearfix"></div>
-                      </form>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header" data-background-color="purple">
+            <h4 class="title">Edit Surgery Recipe</h4>
+            <p class="category"></p>
+          </div>
+          <div class="card-content">
+            <% @surgery_recipe_reqs.each do |req| %>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group label-floating is-empty">
+                      <label class="control-label"><%#= form.label :surgery_type_id %></label>
+                      <%= form_with(model: req, local: true, method: 'put', data: { remote: true }, class: "req_#{req.id}") do |form| %>
+                        <%= form.object.supply_list.item_name %>
+                        <%= form.number_field :qty %>
+                        <%= submit_tag "Update", class: 'btn btn-primary' %>
+                      <% end %>
+                    </div>
                   </div>
                 </div>
-            </div>
+            <% end %>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
-<% end %>
