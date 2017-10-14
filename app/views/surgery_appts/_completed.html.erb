@@ -5,14 +5,10 @@
     <div class="row">
       <div class="col-md-12">
         <div class="card">
-
-
           <div class="card-header" data-background-color="purple">
               <h4 class="title">Complete Surgery</h4>
               <p class="category">Update Surgery Values</p>
           </div>
-
-
           <div class="row">
             <div class="col-md-6">
               <div class="form-group label-floating is-empty">
@@ -22,35 +18,34 @@
               </div>
             </div>
           </div>
-
-
+          <div class="card-content">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group label-floating is-empty">
+                  <label class="control-label"><%#= form.label :surgery_type_id %></label>
+                    <% @surgery_appt.surgery_type.surgery_recipe_reqs.each do |req| %>
+                      <%= form_with(model: @surgery_appt, local: true) do |form| %>
+                        <%= form.fields_for req do |fa| %>
+                          <%= fa.label req.supply_list.item_name %>
+                          <%= fa.text_field req.supply_list.id, value: req.qty %>
+                        <% end %>
+                      <% end %>
+                    <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
             <!-- <div class="form-group label-floating is-empty"> -->
-              <% @surgery_appt.surgery_type.surgery_recipe_reqs.each do |req| %>
-                <%= form.fields_for req do |fa| %>
-
-                <%= fa.label req.supply_list.item_name %>
-                <%= fa.text_field req.supply_list.id, value: req.qty %>
-
-               <% end %>
-              <% end %>
-
-
-
-       <div class="row">
+        <div class="row">
          <div class="col-md-6">
            <div class="form-group label-floating is-empty">
-             <%= submit_tag "Update" %>
+             <%= submit_tag "Update", class: 'btn btn-primary' %>
              <span class="material-input"></span>
            </div>
          </div>
-       </div>
-
-
-
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <% end %>
-
-</div>
-</div>
-</div>
-</div>
-</div>
