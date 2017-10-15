@@ -60,21 +60,28 @@
                   </li>
 
 
-                  <% if current_user == nil %>
+                  <!-- <li class="active-pro">
+                      <a href="/signup">
+                          <i class="material-icons">unarchive</i>
+                          <p>Sign Up here!</p>
+                      </a>
+                  </li> -->
+                  <% if current_user %>
                   <li class="active-pro">
                       <a href="/logout">
                           <i class="material-icons">unarchive</i>
-                          <p>Sign Up here!</p>
+                          <p>Logout Here!</p>
                       </a>
                   </li>
                   <% else %>
                   <li class="active-pro">
                       <a href="/login">
                           <i class="material-icons">unarchive</i>
-                          <p>Logout Here!</p>
+                          <p>Log In!</p>
                       </a>
                   </li>
                   <% end %>
+
 
 
 
