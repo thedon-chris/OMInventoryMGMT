@@ -23,8 +23,18 @@
                               <p class="category"> zo</p>
                           </div>
                           <div class="card-content">
-                              <form>
+                              <!-- <form> -->
                                 <!-- this is the SurgeryAppt type field -->
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <div class="form-group label-floating is-empty">
+                                      <label class="control-label"><%#= form.label :surgery_type_id %></label>
+                                      <%= form.select :clinic_id, options_from_collection_for_select(Clinic.all, 'id', 'clinic_name'), {}, {class: "form-control hidden"} %>
+                                      <%= hidden_field_tag :name_something, 4%>
+                                      <span class="material-input"></span>
+                                    </div>
+                                  </div>
+                                </div>
                                 <div class="row">
                                   <div class="col-md-6">
                                     <div class="form-group label-floating is-empty">
@@ -33,7 +43,7 @@
                                       <span class="material-input"></span>
                                     </div>
                                   </div>
-                              </div>
+                                </div>
                                 <div class="row">
                                   <div class="col-md-4">
                                     <div class="form-group label-floating is-empty">
@@ -55,13 +65,13 @@
                                       </div>
                                   </div>
                                 </div>
-                                <div class="row">
+                                <!-- <div class="row">
                                       <div class="col-md-12">
                                       </div>
-                                  </div>
+                                  </div> -->
                                 <button type="submit" class="btn btn-primary pull-right btn-block" onclick="demo.showNotification('top','center')">New Appointment!</button>
                                 <div class="clearfix"></div>
-                              </form>
+                              <!-- </form> -->
                           </div>
                       </div>
                   </div>
