@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+
+  root 'page#index'
+  get 'page/home' => 'page/home', as: 'home'
+
   get 'calendar/test'
   get 'calendar/month'
   get 'calendar/day'
@@ -12,7 +16,6 @@ Rails.application.routes.draw do
   get 'calendar/index'
   get 'calendar/week'
 
-  root 'page#index'
 
   get 'completed/:id' => 'surgery_appts#completed', as: 'completed'
   put 'completed2/:id' => 'surgery_appts#completed', as: 'completed_done'
