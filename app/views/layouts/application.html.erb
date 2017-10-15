@@ -13,130 +13,22 @@
   <body>
 
     <div class="wrapper">
-      <div class="sidebar" data-color="purple">
-          <div class="logo">
-              <a href="/" class="simple-text">
-                  Medical Inventory App
-              </a>
-          </div>
-          <div class="sidebar-wrapper">
-              <ul class="nav">
-                  <li class= "<%= controller_name == 'page' ? 'active' :nil  %>">
-
-                      <a href="/">
-                          <i class="material-icons">dashboard</i>
-                          <p>Home</p>
-                      </a>
-                  </li>
-                    <li class= "<%= (controller_name == 'surgery_appts' && controller.action_name == 'new' ) ? 'active' :nil  %>">
-                      <a href="/surgery_appts/new">
-                          <i class="material-icons">accessibility</i>
-                          <p>New Surgery Appt</p>
-                      </a>
-                  </li>
-                  <li class= "<%= ( controller_name == 'surgery_appts' && controller.action_name == 'index' || (controller_name == 'surgery_appts' && controller.action_name == 'show') || (controller_name == 'surgery_appts' && controller.action_name == 'complete') || (controller_name == 'surgery_appts' && controller.action_name == 'completed')) ? 'active' :nil  %>">
-                      <a href="/surgery_appts">
-                          <i class="material-icons">perm_contact_calendar</i>
-                          <p>Surgery Appts</p>
-                      </a>
-                  </li>
-                  <li class= "<%= controller_name == 'inventories' ? 'active' :nil  %>">
-                      <a href="/inventories">
-                          <i class="material-icons">content_paste</i>
-                          <p>Inventories</p>
-                      </a>
-                  </li>
-                  <li class= "<%= controller_name == 'surgery_types' ? 'active' :nil  %>">
-                      <a href="/surgery_types">
-                          <i class="material-icons">library_books</i>
-                          <p>Surgery Types/Recipes</p>
-                      </a>
-                  </li>
-                  <li class= "<%= controller_name == 'calendar' ? 'active' :nil  %>">
-                      <a href="/calendar/index">
-                          <i class="material-icons">schedule</i>
-                          <p>Calendar</p>
-                      </a>
-                  </li>
-
-
-                  <!-- <li class="active-pro">
-                      <a href="/signup">
-                          <i class="material-icons">unarchive</i>
-                          <p>Sign Up here!</p>
-                      </a>
-                  </li> -->
-                  <% if current_user %>
-                  <li class="active-pro">
-                      <a href="/logout">
-                          <i class="material-icons">unarchive</i>
-                          <p>Logout Here!</p>
-                      </a>
-                  </li>
-                  <% else %>
-                  <li class="active-pro">
-                      <a href="/login">
-                          <i class="material-icons">unarchive</i>
-                          <p>Log In!</p>
-                      </a>
-                  </li>
-                  <% end %>
+      <% if current_user %>
+        <%= render partial: 'layouts/side_bar' %>
+      <% end %>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-              </ul>
-          </div>
-      </div>
-      <div class="main-panel">
+      <div class="main-panel" style="width: <%= '100vw' unless current_user  %>">
         <div class="container-fluid">
-        <%= yield %>
-        <footer class="footer">
-            <div class="container-fluid">
-                <nav class="pull-left">
-                    <ul>
-                        <li>
-                            <a href="">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                New Surgery Appt
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                View All Appointments
-                            </a>
-                        </li>
-                        <li>
-                            <a href="">
-                                Check Inventories
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <p class="copyright pull-right">
-                    &copy;
 
-                    The Biggest D's, made for Wyncode Pitch Day. Bang!
-                </p>
-            </div>
-        </footer>
+
+        <%= yield %>
+
         </div>
       </div>
     </div>
+
     <% if flash[:notice].present? %>
       <script>
         setTimeout(function(){

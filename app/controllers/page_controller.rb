@@ -1,4 +1,6 @@
 class PageController < ApplicationController
+  skip_before_action :authorize, only: [:home]
+
   def index
     @inventories = Inventory.all
     @surgery_appts = SurgeryAppt.all
@@ -18,6 +20,7 @@ class PageController < ApplicationController
 
 
   def home
+
   end
 
 
