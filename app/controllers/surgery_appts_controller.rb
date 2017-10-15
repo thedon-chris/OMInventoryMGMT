@@ -59,8 +59,8 @@ class SurgeryApptsController < ApplicationController
   # PATCH/PUT /surgery_appts/1
   # PATCH/PUT /surgery_appts/1.json
   def update
-    respond_to do |format|
       if @surgery_appt.update(surgery_appt_params)
+        redirect_to root_path, notice: 'Surgery appt was successfully updated.'
 
         if @surgery_appt.complete # the surgery is not yet complete
           # TODO: I wish I learned how to use accepts_nested_attributes_for
@@ -69,15 +69,13 @@ class SurgeryApptsController < ApplicationController
           #take the acutal reqs
           #go subtract from inventory
         end
-
-        format.html { redirect_to @surgery_appt, notice: 'Surgery appt was successfully updated.' }
-        format.json { render :show, status: :ok, location: @surgery_appt }
+        # format.html { redirect_to @surgery_appt, notice: 'Surgery appt was successfully updated.' }
+        # format.json { render :show, status: :ok, location: @surgery_appt }
 
       else
-        format.html { render :edit }
-        format.json { render json: @surgery_appt.errors, status: :unprocessable_entity }
+        # format.html { render :edit }
+        # format.json { render json: @surgery_appt.errors, status: :unprocessable_entity }
       end
-    end
   end
 
   # DELETE /surgery_appts/1
