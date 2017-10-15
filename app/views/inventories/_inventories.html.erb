@@ -41,14 +41,9 @@
                     <td><%= inventory.expiration(3, "week") %></td>
                     <td><%= inventory.expiration(1, "year") %></td>
                     <td><%= inventory.actual_consumed %></td>
-                    <td><%= link_to 'Show', inventory %></td>
-                    <td><%= link_to 'Edit', edit_inventory_path(inventory) %></td>
-                    <td><%= link_to 'Destroy', inventory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                   </tr>
                 <% end %>
               </tbody>
-
-
 
             </table>
 
