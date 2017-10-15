@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OMInventoryMGMT</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -30,13 +29,13 @@
                   </li>
                     <li class= "<%= (controller_name == 'surgery_appts' && controller.action_name == 'new' ) ? 'active' :nil  %>">
                       <a href="/surgery_appts/new">
-                          <i class="material-icons">bubble_chart</i>
+                          <i class="material-icons">accessibility</i>
                           <p>New Surgery Appt</p>
                       </a>
                   </li>
                   <li class= "<%= ( controller_name == 'surgery_appts' && controller.action_name == 'index' || (controller_name == 'surgery_appts' && controller.action_name == 'show') || (controller_name == 'surgery_appts' && controller.action_name == 'complete') || (controller_name == 'surgery_appts' && controller.action_name == 'completed')) ? 'active' :nil  %>">
                       <a href="/surgery_appts">
-                          <i class="material-icons">person</i>
+                          <i class="material-icons">perm_contact_calendar</i>
                           <p>Surgery Appts</p>
                       </a>
                   </li>
@@ -54,7 +53,7 @@
                   </li>
                   <li class= "<%= controller_name == 'calendar' ? 'active' :nil  %>">
                       <a href="/calendar/index">
-                          <i class="material-icons">location_on</i>
+                          <i class="material-icons">schedule</i>
                           <p>Calendar</p>
                       </a>
                   </li>
