@@ -39,6 +39,10 @@ class SurgeryApptsController < ApplicationController
     @surgery_appt = SurgeryAppt.new(surgery_appt_params)
       if @surgery_appt.save
         # redirect_to surgery_appts_path
+        redirect_to root_path, notice: "New Surgery Appointment Created!"
+
+
+
         else
           # redirect_to root_path
       end

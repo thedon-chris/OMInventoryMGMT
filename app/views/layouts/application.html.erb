@@ -114,5 +114,12 @@
         </div>
       </div>
     </div>
+    <% if flash[:notice].present? %>
+      <script>
+        setTimeout(function(){
+          demo.showNotification('top','center', "<%= flash[:notice] %>")
+        }, 300);
+        </script>
+    <% end %>
   </body>
 </html>

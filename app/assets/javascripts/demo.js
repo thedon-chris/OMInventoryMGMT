@@ -248,12 +248,14 @@ demo = {
         marker.setMap(map);
     },
 
-    showNotification: function(from, align) {
+    showNotification: function(from, align, notice) {
+
+        notice = notice || "Notice is blank"
         color = Math.floor((Math.random() * 4) + 1);
 
         $.notify({
             icon: "notifications",
-            message: "Appointment created!"
+            message: notice
 
         }, {
             type: type[color],
@@ -265,6 +267,8 @@ demo = {
         });
     }
 
-
-
 }
+
+// var delayMillis = 1000; //1 second
+//
+// }, delayMillis);
