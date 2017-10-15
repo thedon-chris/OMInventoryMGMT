@@ -1,43 +1,16 @@
 <%= form_with(model: inventory, local: true) do |form| %>
-  <% if inventory.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(inventory.errors.count, "error") %> prohibited this inventory from being saved:</h2>
-
-      <ul>
-      <% inventory.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :qty %>
-    <%= form.number_field :qty, id: :inventory_qty %>
-  </div>
-
-  <div class="field">
-    <%= form.label :clinic_id %>
-    <%= form.text_field :clinic_id, id: :inventory_clinic_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :supply_list_id %>
-    <%= form.text_field :supply_list_id, id: :inventory_supply_list_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
-
-
-  <%= form_with(model: surgery_appt, local: true) do |form| %>
+    <%#= form.label :qty %>
+    <%#= form.number_field :qty, id: :inventory_qty %>
+    <%#= form.label :clinic_id %>
+    <%#= form.text_field :clinic_id, id: :inventory_clinic_id %>
+    <%#= form.label :supply_list_id %>
+    <%#= form.text_field :supply_list_id, id: :inventory_supply_list_id %>
+    <%#= form.submit %>
 
       <div class="content">
           <div class="container-fluid">
               <div class="row">
-                  <div class="col-md-8">
+                  <div class="col-md-4">
                       <div class="card">
                           <div class="card-header" data-background-color="purple">
                               <h4 class="title">Add Item to Inventory!</h4>
@@ -47,9 +20,8 @@
                                 <div class="row">
                                   <div class="col-md-6">
                                     <div class="form-group label-floating is-empty">
-                                      <label class="control-label"><%#= form.label :surgery_type_id %></label>
-                                      <%= form.select :clinic_id, options_from_collection_for_select(Clinic.all, 'id', 'clinic_name'), {}, {class: "form-control hidden"} %>
-                                      <%= hidden_field_tag :name_something, 4%>
+                                      <label class="control-label"><%#=:supply_list_id %></label>
+                                      <%= form.select :supply_list_id, options_from_collection_for_select(SupplyList.all, 'id', 'item_name'), {}, {class: "form-control"} %>
                                       <span class="material-input"></span>
                                     </div>
                                   </div>
@@ -58,12 +30,22 @@
                                   <div class="col-md-6">
                                     <div class="form-group label-floating is-empty">
                                       <label class="control-label"><%#= form.label :surgery_type_id %></label>
-                                      <%= form.select :surgery_type_id, options_from_collection_for_select(SurgeryType.all, 'id', 'surgery_name'), {}, {class: "form-control"} %>
+                                      <%= form.label :qty %>
+                                      <%= form.number_field :qty, id: :inventory_qty %>
                                       <span class="material-input"></span>
                                     </div>
                                   </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary pull-right btn-block" >New Appointment!</button>
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <div class="form-group label-floating is-empty">
+                                      <label class="control-label"><%#= form.label :surgery_type_id %></label>
+                                      <%= form.select :clinic_id, options_from_collection_for_select(Clinic.all, 'id', 'clinic_name'), {}, {class: "form-control"} %>
+                                      <span class="material-input"></span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary pull-right btn-block" >Add Item to Inventory!</button>
                                 <div class="clearfix"></div>
                           </div>
                       </div>
@@ -71,4 +53,4 @@
               </div>
           </div>
       </div>
-  <% end %>
+<% end %>
