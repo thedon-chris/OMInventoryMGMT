@@ -5,6 +5,13 @@ class InventoriesController < ApplicationController
   # GET /inventories.json
   def index
     @inventories = Inventory.all
+    @inventory = Inventory.new
+
+    if @inventory.save
+      redirect_to root_path, notice: 'Item was successfully added to your inventory!.'
+    else
+      render 'index'
+    end
   end
 
   # GET /inventories/1
@@ -26,15 +33,17 @@ class InventoriesController < ApplicationController
   def create
     @inventory = Inventory.new(inventory_params)
 
-    respond_to do |format|
+    # respond_to do |format|
       if @inventory.save
-        format.html { redirect_to @inventory, notice: 'Inventory was successfully created.' }
-        format.json { render :show, status: :created, location: @inventory }
+        redirect_to root_path, notice: 'Item was successfully added to your inventory!.'
+        # format.html { redirect_to @inventory,
+        # format.json { render :show, status: :created, location: @inventory }
       else
-        format.html { render :new }
-        format.json { render json: @inventory.errors, status: :unprocessable_entity }
+        render 'new'
+        # format.html { render :new }
+        # format.json { render json: @inventory.errors, status: :unprocessable_entity }
       end
-    end
+    # end
   end
 
   # PATCH/PUT /inventories/1
