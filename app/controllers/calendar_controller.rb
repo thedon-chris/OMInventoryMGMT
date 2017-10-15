@@ -7,18 +7,17 @@ class CalendarController < ApplicationController
     @surgery_appt = SurgeryAppt.all
   end
 
+
+  def day
+    @surgery_appt = SurgeryAppt.all
+  end
+  
   def test
   end
 
   def month
     @surgery_appt = SurgeryAppt.all
-
   end
-
-
-
-
-
 
 
 
