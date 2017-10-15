@@ -1,30 +1,62 @@
-<div class="col-xs-12 col-md-8 col-md-offset-2">
-  <%= form_with(model: surgery_appt, local: true) do |form| %>
-  <% if surgery_appt.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(surgery_appt.errors.count, "error") %> prohibited this surgery_appt from being saved:</h2>
-    <ul>
-      <% surgery_appt.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
+<% if @surgery_appt.complete == true %>
+<script>
+  setTimeout(function(){
+    demo.showNotification('top','center', "This Surgery is already complete, and you cannot edit!")
+  }, 300);
+  </script>
   <% end %>
 
-  <div class="form-group">
-    <%= form.label :surgery_date %>
-    <!-- date_select(method, options = {}, html_options = {}) -->
-    <%= form.date_select(:surgery_date, {}, {class: 'form-control'}) %>
-  </div>
 
-  <div class="form-group label-floating is-empty">
-    <%= form.label :surgery_type_id %>
-    <%= form.select :surgery_type_id, options_from_collection_for_select(SurgeryType.all, 'id', 'surgery_name'), {}, {class: "form-control"} %>
-    <span class="material-input"></span>
-  </div>
 
-  <div class="form-group">
-    <%= form.submit "Save", class: 'btn btn-success' %>
+
+
+<%= form_with(model: surgery_appt, local: true) do |form| %>
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header" data-background-color="purple">
+                        <h4 class="title">Surgery Appt</h4>
+                        <p class="category"> See and Edit your Appointment! </p>
+                    </div>
+                    <div class="card-content">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group label-floating is-empty">
+                            <label class="control-label"><%#= form.label :surgery_type_id %></label>
+                            <%= form.label :surgery_type_id %>
+                            <%= form.select :surgery_type_id, options_from_collection_for_select(SurgeryType.all, 'id', 'surgery_name'), {}, {class: "form-control"} %>
+                            <span class="material-input"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group label-floating is-empty">
+                            <label class="control-label"><%#= form.label :surgery_type_id %></label>
+                            <%= form.label :surgery_date %>
+                            <%= form.date_select(:surgery_date, {}, {class: 'form-control'}) %>
+                            <span class="material-input"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <% if @surgery_appt.complete == true %>
+                      <button type="button" class="btn btn-primary pull-right btn-block disabled" >Edit this Appointment!</button>
+                      <div class="clearfix"></div>
+                      <% else %>
+                      <button type="submit" class="btn btn-primary pull-right btn-block" >Edit this Appointment!</button>
+                      <div class="clearfix"></div>
+
+
+                      <% end %>
+
+                </div>
+            </div>
+        </div>
+    </div>
   </div>
-  <% end %>
 </div>
+
+
+  <% end %>
