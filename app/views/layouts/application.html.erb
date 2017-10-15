@@ -11,6 +11,7 @@
   </head>
 
   <body>
+
     <div class="wrapper">
       <div class="sidebar" data-color="purple">
           <div class="logo">
@@ -57,18 +58,34 @@
                           <p>Calendar</p>
                       </a>
                   </li>
+
+
+                  <% if current_user == nil %>
                   <li class="active-pro">
-                      <a href="">
+                      <a href="/logout">
                           <i class="material-icons">unarchive</i>
-                          <p>
-                            <% if current_user %>
-                            Signed in as <%= current_user.name %>
-                            <% else %>
-                            <%= link_to "Logout", '/logout' %>
-                            <% end %>
-                          </p>
+                          <p>Sign Up here!</p>
                       </a>
                   </li>
+                  <% else %>
+                  <li class="active-pro">
+                      <a href="/login">
+                          <i class="material-icons">unarchive</i>
+                          <p>Logout Here!</p>
+                      </a>
+                  </li>
+                  <% end %>
+
+
+
+
+
+
+
+
+
+
+
 
 
               </ul>
@@ -110,7 +127,6 @@
                 </p>
             </div>
         </footer>
-
         </div>
       </div>
     </div>
@@ -121,5 +137,19 @@
         }, 300);
         </script>
     <% end %>
+
+
+
+
   </body>
+
+
+
+
+
+
+
+
+
+
 </html>
