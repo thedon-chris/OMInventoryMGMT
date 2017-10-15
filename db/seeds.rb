@@ -10,25 +10,32 @@
 # ActualRecipeReq.create(qty:6, surgery_appt_id:1, supply_list_id:1)
 
 
-SupplyList.create(item_name: 'Scalpel')
-SupplyList.create(item_name: 'Cotton Ball')
-SupplyList.create(item_name: 'Suture')
-SupplyList.create(item_name: 'Bandages')
-SupplyList.create(item_name: 'Implant')
-SupplyList.create(item_name: 'Silicone Tube')
+SupplyList.create(item_name: 'IV-set')
+SupplyList.create(item_name: 'Stryker-Pad')
+SupplyList.create(item_name: 'Gown')
+SupplyList.create(item_name: 'Oxygen-tubing')
+SupplyList.create(item_name: 'Suction-tubing')
+SupplyList.create(item_name: 'Bite-block')
+SupplyList.create(item_name: 'Biopsy-forceps')
+SupplyList.create(item_name: 'Brush')
+SupplyList.create(item_name: 'Gloves')
 
 
 Clinic.create(clinic_name: "South Miami Gastro")
 
-Inventory.create(qty: 100, clinic_id: 1, supply_list_id: 1 )
-Inventory.create(qty: 100, clinic_id: 1, supply_list_id: 2 )
-Inventory.create(qty: 100, clinic_id: 1, supply_list_id: 3 )
-Inventory.create(qty: 100, clinic_id: 1, supply_list_id: 4 )
-Inventory.create(qty: 100, clinic_id: 1, supply_list_id: 5 )
-Inventory.create(qty: 100, clinic_id: 1, supply_list_id: 6 )
+Inventory.create(qty: 500, clinic_id: 1, supply_list_id: 1 )
+Inventory.create(qty: 1000, clinic_id: 1, supply_list_id: 2 )
+Inventory.create(qty: 1000, clinic_id: 1, supply_list_id: 3 )
+Inventory.create(qty: 500, clinic_id: 1, supply_list_id: 4 )
+Inventory.create(qty: 500, clinic_id: 1, supply_list_id: 5 )
+Inventory.create(qty: 500, clinic_id: 1, supply_list_id: 6 )
+Inventory.create(qty: 500, clinic_id: 1, supply_list_id: 7 )
+Inventory.create(qty: 500, clinic_id: 1, supply_list_id: 8 )
+Inventory.create(qty: 500, clinic_id: 1, supply_list_id: 9 )
+
 
 SurgeryType.create(surgery_name: "Endoscopy")
-SurgeryType.create(surgery_name: "Colono4scopy")
+SurgeryType.create(surgery_name: "Colonoscopy")
 SurgeryType.create(surgery_name: "Enteroscopy")
 SurgeryType.create(surgery_name: "Upper Endoscopy")
 SurgeryType.create(surgery_name: "Ostomy Exam")
@@ -52,7 +59,7 @@ end
 # end
 
 s=0
-l=15
+l=14
 25.times do
   l+=1
   # s+=1

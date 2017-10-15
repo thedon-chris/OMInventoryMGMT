@@ -14,10 +14,10 @@
             var myChart = new Chart(ctx, {
               type: 'bar',
               data: {
-                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                labels: '<%= @inv_item_names.join(" ") %>'.split(' '),
                 datasets: [{
-                  label: '# of Votes',
-                  data: [5, 19, 3, 5, 2, 3],
+                  label: 'Item quantity',
+                  data: <%= @inv_item_qts %>,
                   backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
