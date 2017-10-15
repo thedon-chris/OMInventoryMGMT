@@ -4,7 +4,7 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header" data-background-color="purple">
-              <h4 class="title">Simple Table</h4>
+              <h4 class="title">Appointments</h4>
               <p class="category">Here is a subtitle for this table</p>
           </div>
           <div class="card-content table-responsive">
@@ -17,7 +17,7 @@
                 <% @surgery_appts.each do |surgery_appt| %>
                   <tr>
                     <td><%= link_to surgery_appt.surgery_date, surgery_appt  %></td>
-                    <td><%= link_to surgery_appt.clinic.clinic_name, surgery_appt  %></td>
+                    <td><%= surgery_appt.clinic.clinic_name %></td>
                     <td><%= link_to surgery_appt.surgery_type.surgery_name, surgery_appt  %></td>
                     <td><%= link_to 'Delete', surgery_appt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                     <% unless surgery_appt.complete %>
