@@ -29,7 +29,8 @@
                                   <div class="col-md-6">
                                     <div class="form-group label-floating is-empty">
                                       <label class="control-label"><%#= form.label :surgery_type_id %></label>
-                                      <%= form.select :clinic_id, options_from_collection_for_select(Clinic.all, 'id', 'clinic_name'), {}, {class: "form-control"} %>
+                                      <%= form.select :clinic_id, options_from_collection_for_select(Clinic.all, 'id', 'clinic_name'), {}, {class: "form-control hidden"} %>
+                                      <%= hidden_field_tag :name_something, 4%>
                                       <span class="material-input"></span>
                                     </div>
                                   </div>
