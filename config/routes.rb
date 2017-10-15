@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root 'page#index'
   get 'page/home' => 'page/home', as: 'home'
+
   get 'calendar/test'
   get 'calendar/month'
   get 'calendar/day'
