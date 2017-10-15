@@ -11,6 +11,8 @@ class CalendarController < ApplicationController
   end
 
   def month
+    @surgery_appt = SurgeryAppt.all
+
   end
 
 
