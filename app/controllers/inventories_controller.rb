@@ -46,8 +46,6 @@ class InventoriesController < ApplicationController
     # end
   end
 
-  def chart
-  end
 
   # PATCH/PUT /inventories/1
   # PATCH/PUT /inventories/1.json
