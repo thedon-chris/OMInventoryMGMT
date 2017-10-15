@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'inventories/graph'
-
   get 'calendar/test'
   get 'calendar/month'
   get 'calendar/day'

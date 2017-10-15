@@ -46,7 +46,6 @@ class InventoriesController < ApplicationController
     # end
   end
 
-
   # PATCH/PUT /inventories/1
   # PATCH/PUT /inventories/1.json
   def update

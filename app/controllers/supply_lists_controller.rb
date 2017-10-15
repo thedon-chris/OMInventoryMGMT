@@ -19,6 +19,17 @@ class SupplyListsController < ApplicationController
 
   # GET /supply_lists/1/edit
   def edit
+    @inventories = Inventory.all
+
+  @inv_item_names = []
+    @inventories.each do |inventory|
+      @inv_item_names << inventory.supply_list.item_name
+    end
+
+    @inv_item_qts = []
+    @inventories.each do |inventory|
+      @inv_item_qts << inventory.qty
+    end
   end
 
   # POST /supply_lists
