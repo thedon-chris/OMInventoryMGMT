@@ -32,7 +32,7 @@
                        </a>
                      </div>
                      <div class="col-md-4">
-                       <a href="/calendar/index">
+                       <a href="/calendar/month">
                          <button class="btn btn-primary btn-block" onclick="demo.showNotification('top','left')">Month</button>
                        </a>
                      </div>
@@ -40,7 +40,7 @@
                  </div>
              </div>
          </div>
-          <%= calendar number_of_days: 7, events: @surgery_appt do |date, surgery| %>
+          <%= calendar number_of_days: 1, events: @surgery_appt do |date, surgery| %>
             <%= date %>
             <% surgery.each do |surgery| %>
               <div>

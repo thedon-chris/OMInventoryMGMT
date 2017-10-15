@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   get 'calendar/test'
   get 'calendar/month'
+  get 'calendar/day'
+  get 'calendar/week'
+
+
 
   get 'surgery_appts/table'
 

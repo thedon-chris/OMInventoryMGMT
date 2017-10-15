@@ -1,61 +1,48 @@
-<%= form_with(model: surgery_appt, local: true) do |form| %>
+<div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
 
-<div class="main-panel">
-    <div class="container-fluid">
-    </div>
-    <div class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-header" data-background-color="purple">
-                            <h4 class="title">New Surgery Appt</h4>
-                            <p class="category">pingazo</p>
-                        </div>
-                        <div class="card-content">
-                            <form>
+          <div class="card-header" data-background-color="blue">
+              <h4 class="title">Calendar</h4>
+              <p class="category">All Appointments Below</p>
+          </div>
+          <br>
 
-                              <div class="row">
-                                <div class="col-md-6">
-                                  <div class="form-group label-floating is-empty">
-                                    <label class="control-label"><%= form.label :surgery_type_id %></label>
-                                    <%= form.select :surgery_type_id, options_from_collection_for_select(SurgeryType.all, 'id', 'surgery_name'), {}, {class: "form-control"} %>
-                                    <span class="material-input"></span>
-                                  </div>
-                                </div>
-                            </div>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="form-group label-floating">
-                                            <label class="control-label">Month</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group label-floating">
-                                            <label class="control-label">Day</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group label-floating">
-                                            <label class="control-label">Year</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                    </div>
-                                </div>
-                                <button type="submit" class="btn btn-primary pull-right">New Appointment!</button>
-                                <div class="clearfix"></div>
-                            </form>
+             <div class="places-buttons">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 text-center">
+                        <h5>Notifications Places
+                            <p class="category">Click to view notifications</p>
+                        </h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="col-md-4">
+                          <a href="/calendar/day">
+                            <button class="btn btn-primary btn-block" onclick="demo.showNotification('top','left')">Day</button>
+                          </a>
                         </div>
+                        <div class="col-md-4">
+                          <a href="/calendar/week">
+                            <button class="btn btn-primary btn-block" onclick="demo.showNotification('top','left')">Week</button>
+                          </a>
+                        </div>
+                        <div class="col-md-4">
+                          <a href="/calendar/month">
+                            <button class="btn btn-primary btn-block" onclick="demo.showNotification('top','left')">Month</button>
+                          </a>
+                        </div>
+
                     </div>
                 </div>
             </div>
+          </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
-<% end %>
