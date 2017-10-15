@@ -57,3 +57,14 @@
     font-size: 16px;
   }
 }
+
+
+.table > caption + thead > tr:first-child > th, .table > colgroup + thead > tr:first-child > th, .table > thead:first-child > tr:first-child > th, .table > caption + thead > tr:first-child > td, .table > colgroup + thead > tr:first-child > td, .table > thead:first-child > tr:first-child > td {
+    color: white;
+    background-color: #9c27b0;
+    padding: 12px 30px;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0;
+}

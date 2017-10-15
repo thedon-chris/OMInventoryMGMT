@@ -7,21 +7,33 @@
             <h4 class="title">Edit Surgery Recipe</h4>
             <p class="category"></p>
           </div>
-          <div class="card-content">
-            <% @surgery_recipe_reqs.each do |req| %>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="form-group label-floating is-empty">
-                      <label class="control-label"><%#= form.label :surgery_type_id %></label>
-                      <%= form_with(model: req, local: true, method: 'put', data: { remote: true }, class: "req_#{req.id}") do |form| %>
-                        <%= form.object.supply_list.item_name %>
-                        <%= form.number_field :qty %>
-                        <%= submit_tag "Update", class: 'btn btn-primary' %>
-                      <% end %>
-                    </div>
+          <div class="card-content table-responsive">
+            <table class="table table-hover">
+              <thead class="text-primary">
+                <tr>
+                  <th>Item Name</th>
+                  <th>Qty Used</th>
+                  <th>Submit</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <div class="col-md-12">
+                  <div class="form-group label-floating is-empty">
+                    <% @surgery_recipe_reqs.each do |req| %>
+                      <tr>
+                          <label class="control-label"><%#= form.label :surgery_type_id %></label>
+                          <%= form_with(model: req, local: true, method: 'put', data: { remote: true }, class: "req_#{req.id}") do |form| %>
+                          <td><%= form.object.supply_list.item_name %></td>
+                          <td><%= form.number_field :qty %></td>
+                          <td><%= submit_tag "Update", class: 'btn btn-primary' %></td>
+                        <% end %>
+                      </tr>
+                    <% end %>
                   </div>
                 </div>
-            <% end %>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
