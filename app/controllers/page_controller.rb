@@ -17,5 +17,11 @@ class PageController < ApplicationController
   end
 
 
+  def home
+  end
+
+
+
+
 
 end
