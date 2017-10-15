@@ -26,14 +26,14 @@
 
               <tbody>
                 <% @surgery_appts.each do |surgery_appt| %>
-                  <tr>
+                    <tr>
                     <% if surgery_appt.complete == false && surgery_appt.surgery_date == Date.today %>
-                    <td><%= surgery_appt.clinic.clinic_name %></td>
-                    <td><%= link_to surgery_appt.surgery_type.surgery_name, surgery_appt %></td>
-                    <td><%= surgery_appt.surgery_date %></td>
-                      <td><%= link_to 'Complete', completed_path(surgery_appt.id) %></td>
-                  </tr>
-                <% end %>
+                      <td><%= surgery_appt.clinic.clinic_name %></td>
+                      <td><%= link_to surgery_appt.surgery_type.surgery_name, surgery_appt %></td>
+                      <td><%= surgery_appt.surgery_date %></td>
+                        <td><%= link_to 'Complete', completed_path(surgery_appt.id) %></td>
+                    </tr>
+                  <% end %>
                 <% end %>
               </tbody>
 
