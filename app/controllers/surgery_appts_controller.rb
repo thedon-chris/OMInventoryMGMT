@@ -11,7 +11,9 @@ class SurgeryApptsController < ApplicationController
 
   def index
     @surgery_appts = SurgeryAppt.all
+    @surgery_appt = SurgeryAppt.paginate(:page => params[:page],:per_page => 14)
   end
+
 
   # GET /surgery_appts/1
   # GET /surgery_appts/1.json

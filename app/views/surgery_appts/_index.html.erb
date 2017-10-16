@@ -17,8 +17,9 @@
 
 
               </thead>
+              <%= will_paginate @surgery_appt %>g
               <tbody>
-                <% @surgery_appts.each do |surgery_appt| %>
+                <% @surgery_appt.each do |surgery_appt| %>
                   <tr>
                     <td><%= link_to surgery_appt.surgery_date, surgery_appt  %></td>
                     <td><%= link_to surgery_appt.surgery_type.surgery_name, edit_surgery_appt_path(surgery_appt)  %></td>

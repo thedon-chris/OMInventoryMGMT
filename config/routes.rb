@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   post 'home' => 'sessions#create'
   get 'home' => 'users#new'
 
-
+  get 'surgery_appts/all/paginate' => 'surgery_appts#paginate'
+  get 'surgery_appts/all/paginate/:id' => 'surgery_appts#paginate'
 
 
   get 'calendar/test'
