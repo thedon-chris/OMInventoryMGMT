@@ -94,7 +94,7 @@ var barChartData = {
     "labels": '<%= @inv_item_names.join(" ") %>'.split(' '),
     "datasets": [{
         "label": 'Actual Consumption',
-        "backgroundColor": ["rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)"],
+        "backgroundColor": ["rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)"],
         "data": <%= @actual_consump %>
       },
       // {
@@ -104,7 +104,7 @@ var barChartData = {
       // },
       {
         "label": 'Projected Demand',
-        "backgroundColor": ["rgb(255, 205, 86)", "rgb(255, 205, 86)", "rgb(255, 205, 86)", "rgb(255, 205, 86)"],
+        "backgroundColor": ["rgb(255, 205, 86)", "rgb(255, 205, 86)", "rgb(255, 205, 86)", "rgb(255, 205, 86)", "rgb(255, 205, 86)", "rgb(255, 205, 86)", "rgb(255, 205, 86)", "rgb(255, 205, 86)", "rgb(255, 205, 86)"],
         "data": <%= @projected_demand %>
       }]
 
