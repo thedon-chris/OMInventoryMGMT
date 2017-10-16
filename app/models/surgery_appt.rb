@@ -34,7 +34,7 @@ class SurgeryAppt < ApplicationRecord
     arr
     # arr2
   end
-  SurgeryAppt.first.check_stock
+  # SurgeryAppt.first.check_stock
 
 
 
