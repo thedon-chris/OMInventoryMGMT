@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
 
+  get 'business_intelligence/index'
+
+  get 'business_intelligence/donut_graph'
+
+  get 'business_intelligence/line_graph'
+
+  get 'business_intelligence/bar_graph'
+
   root 'page#index'
   get '/home' => 'page#home', as: 'home'
   post 'home' => 'sessions#create'

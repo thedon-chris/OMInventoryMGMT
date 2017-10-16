@@ -1,0 +1,165 @@
+<h1>BusinessIntelligence#index</h1>
+
+
+<%= render 'bar_graph' %>
+<%= render 'donut_graph' %>
+<%= render 'line_graph' %>
+
+
+
+
+
+
+
+
+
+
+
+########## BAR CHART ##########
+
+
+<!-- <div class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 no-padding">
+        <div class="card">
+          <div class="card-header" data-background-color="purple">
+              <h4 class="title">Inventory Analytics<i class="material-icons">show_chart</i></h4>
+              <p class="category">Current levels of stock</p>
+          </div>
+          <div class="col-md-12">
+            <canvas id="myChart" width="400" height="400"></canvas>
+            <script>
+            var ctx = document.getElementById("myChart");
+            var myChart = new Chart(ctx, {
+              type: 'bar',
+              data: {
+                labels: '<%= @inv_item_names.join(" ") %>'.split(' '),
+                datasets: [{
+                  label: 'Item quantity',
+                  data: <%= @inv_item_qts %>,
+                  backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                  ],
+                  borderColor: [
+                    'rgba(255,99,132,1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                  ],
+                  borderWidth: 1
+                }]
+              },
+              options: {
+                legend: {
+                  labels: {
+                    // This more specific font property overrides the global property
+                    // fontSize: 19
+                  }
+                },
+                scales: {
+                  yAxes: [{
+                    display: true,
+                    ticks: {
+                      beginAtZero: true,
+                    }
+                  }]
+                }
+              }
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+########## DONUT CHART ##########
+
+<canvas id="chartjs-4" class="chartjs" width="1540" height="770" style="display: block; height: 385px; width: 770px;"></canvas>
+
+ <script>
+   new Chart(document.getElementById("chartjs-4"),{
+     "type":"doughnut",
+     "data": {
+       "labels": '<%= @surgery_types_names.join(" ") %>'.split(' '),
+       "datasets": [{
+           "label":"My First Dataset",
+           "data":<%= @surgery_appts_count %>,
+           "backgroundColor":["rgb(255, 99, 132)","rgb(54, 162, 235)","rgb(255, 205, 86)"]
+       }]
+     }
+   });
+ </script>
+
+########## LINE CHART ##########
+
+
+
+
+
+<canvas id="canvas-sam" style="display: block; width: 1065px; height: 532px;" width="1065" height="532" class="chartjs-render-monitor"></canvas>
+
+<script>
+var barChartData = {
+    "labels": '<%= @inv_item_names.join(" ") %>'.split(' '),
+    "datasets": [{
+        "label": 'Actual Consumption',
+        "backgroundColor": ["rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)"],
+        "data": <%= @actual_consump %>
+      },
+      // {
+      //   "label": 'Dataset 2',
+      //   "backgroundColor": ["rgb(54, 162, 235)"],
+      //   "data": [ 100,200,300,400 ]
+      // },
+      {
+        "label": 'Projected Demand',
+        "backgroundColor": ["rgb(255, 205, 86)", "rgb(255, 205, 86)", "rgb(255, 205, 86)", "rgb(255, 205, 86)", "rgb(255, 205, 86)", "rgb(255, 205, 86)", "rgb(255, 205, 86)", "rgb(255, 205, 86)", "rgb(255, 205, 86)"],
+        "data": <%= @projected_demand %>
+      }]
+
+};
+   new Chart(document.getElementById("canvas-sam"), {
+        "type": 'bar',
+        "data": barChartData,
+        "options": {
+            title:{
+                display:true,
+                text:"Chart.js Bar Chart - Stacked"
+            },
+            tooltips: {
+                mode: 'index',
+                intersect: false
+            },
+            responsive: true,
+            scales: {
+                xAxes: [{
+                    stacked: true
+                }],
+                yAxes: [{
+                    stacked: true
+                }]
+            }
+        }
+    });
+
+   new Chart(document.getElementById("chartjs-4"),{
+     "type":"doughnut",
+     "data": {
+       "labels": '<%= @surgery_types_names.join(" ") %>'.split(' '),
+       "datasets": [{
+           "label":"My First Dataset",
+           "data":<%= @surgery_appts_count %>,
+           "backgroundColor":["rgb(255, 99, 132)","rgb(54, 162, 235)","rgb(255, 205, 86)"]
+       }]
+     }
+   });
+ </script> -->
