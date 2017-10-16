@@ -26,7 +26,7 @@
 
 /*Bar Graph Style*/
 #BarGraphCard{
-  background-color: #55bcd1;
+  background-color: #09b2c7;
 }
 #BarGraphCardFooter{
   color: #9c27b0;
@@ -37,7 +37,7 @@
 
 /*Stacked Graph Styles*/
 #StackedGraphCard{
-  background-color: #55bcd1;
+  background-color: #09b2c7;
 }
 #StackedGraphCardContent{
 color: #9c27b0;
@@ -49,7 +49,7 @@ color: #9c27b0;
 
 /*Donut Graph Styles*/
 #DonutGraphCard{
-  background-color: #55bcd1;
+  background-color: #09b2c7;
 
 }
 #DonutGraphCardContent{
