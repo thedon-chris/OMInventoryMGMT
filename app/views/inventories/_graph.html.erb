@@ -1,11 +1,13 @@
+########## BAR CHART ##########
+
 <div class="content">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-12 no-padding">
         <div class="card">
           <div class="card-header" data-background-color="purple">
-              <h4 class="title">Demand Analytics<i class="material-icons">show_chart</i></h4>
-              <p class="category">Here is a subtitle for this table</p>
+              <h4 class="title">Inventory Analytics<i class="material-icons">show_chart</i></h4>
+              <p class="category">Current levels of stock</p>
           </div>
           <div class="col-md-12">
             <canvas id="myChart" width="400" height="400"></canvas>
@@ -40,14 +42,17 @@
               options: {
                 legend: {
                   labels: {
-                    scales: {
-                      yAxes: [{
-                        ticks: {
-                          beginAtZero:true
-                        }
-                      }]
-                    }
+                    // This more specific font property overrides the global property
+                    // fontSize: 19
                   }
+                },
+                scales: {
+                  yAxes: [{
+                    display: true,
+                    ticks: {
+                      beginAtZero: true,
+                    }
+                  }]
                 }
               }
             });
@@ -56,4 +61,49 @@
       </div>
     </div>
   </div>
+</div>
+
+
+<div class="col-xs-12">
+  <canvas id="donut" width="400" height="400"></canvas>
+  <script>
+  var donutEl = document.getElementById("donut").getContext("2d");
+  var donut = new Chart(donutEl).Doughnut(
+  // Datas
+  [
+    {
+      value: 400,
+      color:"#F7464A",
+      highlight: "#FF5A5E",
+      label: "Red"
+    },
+    {
+      value: 50,
+      color: "#46BFBD",
+      highlight: "#5AD3D1",
+      label: "Green"
+    },
+    {
+      value: 100,
+      color: "#FDB45C",
+      highlight: "#FFC870",
+      label: "Yellow"
+    }
+  ],
+  // Options
+  {
+    segmentShowStroke : true,
+    segmentStrokeColor : "#fff",
+    segmentStrokeWidth : 2,
+    percentageInnerCutout : 50,
+    animationSteps : 100,
+    animationEasing : "easeOutBounce",
+    animateRotate : true,
+    animateScale : false,
+    responsive: true,
+    maintainAspectRatio: true,
+    showScale: true,
+    animateScale: true
+  });
+  </script>
 </div>
