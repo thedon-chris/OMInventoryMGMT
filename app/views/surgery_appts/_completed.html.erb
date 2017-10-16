@@ -28,12 +28,12 @@
                             <%= form.fields_for req do |fa| %>
                             <tr>
                               <td><%= fa.label req.supply_list.item_name %></td>
-                              <td><%= fa.text_field req.supply_list.id, value: req.qty %></td>
-                              <td><%= submit_tag "Update", class: 'btn btn-primary' %></td>
+                              <td><%= fa.number_field req.supply_list.id, value: req.qty %></td>
                             </tr>
                             <% end %>
                           <% end %>
                         <% end %>
+                        <td><%= submit_tag "Update", class: 'btn btn-primary' %></td>
                     </div>
                   </div>
                 </tbody>
