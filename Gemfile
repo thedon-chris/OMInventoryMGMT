@@ -75,3 +75,6 @@ gem "npm-rails", "~> 0.2.1"
 
 # Added at 2017-10-13 12:23:08 -0400 by christopherarguello:
 gem "chartjs-ror", "~> 3.3"
+
+# Added at 2017-10-16 11:35:38 -0400 by christopherarguello:
+gem "will_paginate", "~> 3.1"

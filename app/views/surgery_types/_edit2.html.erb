@@ -1,3 +1,4 @@
+<%= form_with(model: @surgery_recipe_req, local: true) do |form| %>
 <div class="content">
   <div class="container-fluid">
     <div class="row">
@@ -20,16 +21,16 @@
               <tbody>
                 <div class="col-md-12">
                   <div class="form-group label-floating is-empty">
-                    <% @surgery_recipe_reqs.each do |req| %>
+                    <% @surgery_type.my_reqs.each do |req| %>
                       <tr>
                           <label class="control-label"><%#= form.label :surgery_type_id %></label>
-                          <%= form_with(model: req, local: true, data: { remote: false }, method: 'put', class: "req_#{req.id}") do |form| %>
-
-                          <td><%= form.object.supply_list.item_name %></td>
-                          <td><%= form.number_field :qty %></td>
-                          <td><%= submit_tag "Update", class: 'btn btn-primary' %></td>
+                          <td><%= req.supply_list.item_name %></td>
+                          <td><%= form.number_field :qty , value: req.qty%></td>
+                          <!-- <td><%#= req.text_field :qty , value: req.qty%></td> -->
                         <% end %>
                       </tr>
+                      <td><%= submit_tag "Update", class: 'btn btn-primary' %></td>
+
                     <% end %>
                   </div>
                 </div>
