@@ -1,0 +1,17 @@
+<div class="col-md-12">
+  <canvas id="myDoughnutChart" width="400" height="400"></canvas>
+  <script>
+  var ctx = document.getElementById("myDoughnutChart");
+  var myDoughnutChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+        data: <%= @inv_item_qts %>,
+        labels: [
+          'Red',
+          'Yellow',
+          'Blue'
+        ],
+      ]}
+    },
+  });
