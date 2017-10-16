@@ -6,7 +6,7 @@ class SurgeryAppt < ApplicationRecord
   validates :surgery_date, presence: true
 
 
-  after_create :sequence
+  after_create :sequence, :check_stock
   def sequence
     SurgeryType.find(self.surgery_type_id).surgery_recipe_reqs.each do |req|
       supply_item = req.supply_list_id
@@ -16,6 +16,26 @@ class SurgeryAppt < ApplicationRecord
         surgery_appt_id:self.id)
       end
   end
+
+  def check_stock
+    my_surgery_type = self.surgery_type
+    all_inventories = Inventory.all
+    arr = []
+    arr2 = []
+    my_surgery_type.surgery_recipe_reqs.each do |inv|
+      this = inv.supply_list_id
+      our_inv = all_inventories.where(supply_list_id:this).first
+      state = our_inv.qty < our_inv.expiration(1, "week")
+      arr << state
+      if state == true
+        # arr2 << "#{inv.supply_list.item_name} is low on stock! '/n'"
+      end
+    end
+    arr
+    # arr2
+  end
+  SurgeryAppt.first.check_stock
+
 
 
 
