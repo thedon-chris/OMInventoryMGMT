@@ -4,8 +4,9 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header" data-background-color="purple">
-              <h4 class="title">Appointments</h4>
-              <p class="category">Here is a subtitle for this table</p>
+              <h4 class="title">All Appointments</h4>
+              <!-- <p class="category">Here is a subtitle for this table</p> -->
+              <br>
           </div>
           <div class="card-content table-responsive">
             <table class="table table-hover">
@@ -26,6 +27,8 @@
                     <td><%= link_to 'Cancel Appointment', surgery_appt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                     <% unless surgery_appt.complete %>
                       <td><%= link_to 'Complete Appointment', completed_path(surgery_appt.id) %></td>
+                      <% else %>
+                      <td><i class="material-icons">done</i></td>
                     <% end %>
                   </tr>
                 <% end %>
