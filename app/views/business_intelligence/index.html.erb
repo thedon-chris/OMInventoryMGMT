@@ -1,22 +1,16 @@
-<h1>BusinessIntelligence#index</h1>
-
-
-<%= render 'bar_graph' %>
-
-
-<!--  Stacked Chart goes here! -->
+<!-- Bar Graph Goes here! -->
 <div class="col-md-8">
-    <div class="card">
-        <div class="card-header card-chart" data-background-color="">
-            <div class="ct-chart" id="completedTasksChart">
-              <%= render 'line_graph' %>
+    <div class="card" id="BarGraphCard">
+        <div class="card-header card-chart" data-background-color="white">
+            <div class="ct-chart" id="BarGraph">
+              <%= render 'bar_graph' %>
             </div>
         </div>
-        <div class="card-content">
+        <div class="card-content" id="BarGraphCardContent">
             <h4 class="title">Surgery Types and Appointments</h4>
             <p class="category">Which Procedure Brings More Appointments?</p>
         </div>
-        <div class="card-footer">
+        <div class="card-footer" id="BarGraphCardFooter">
             <div class="stats">
                 <i class="material-icons">access_time</i> Real Time Data!
             </div>
@@ -24,27 +18,39 @@
     </div>
 </div>
 
-
-
-
-
-
-
-
+<!--  Stacked Chart goes here! -->
+<div class="col-md-8">
+    <div class="card" id="StackedGraphCard">
+        <div class="card-header card-chart" data-background-color="white">
+            <div class="ct-chart" >
+              <%= render 'line_graph' %>
+            </div>
+        </div>
+        <div class="card-content"id="StackedGraphCardContent">
+            <h4 class="title">Surgery Types and Appointments</h4>
+            <p class="category">Which Procedure Brings More Appointments?</p>
+        </div>
+        <div class="card-footer"id="StackedGraphCardFooter">
+            <div class="stats">
+                <i class="material-icons">access_time</i> Real Time Data!
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Donut Graph goes here! -->
 <div class="col-md-8">
-    <div class="card">
-        <div class="card-header card-chart" data-background-color="">
+    <div class="card" id="DonutGraphCard">
+        <div class="card-header card-chart" data-background-color="white">
             <div class="ct-chart" id="completedTasksChart">
               <%= render 'donut_graph' %>
             </div>
         </div>
-        <div class="card-content">
+        <div class="card-content" id="DonutGraphCardContent">
             <h4 class="title">Surgery Types and Appointments</h4>
             <p class="category">Which Procedure Brings More Appointments?</p>
         </div>
-        <div class="card-footer">
+        <div class="card-footer" id="DonutGraphCardFooter">
             <div class="stats">
                 <i class="material-icons">access_time</i> Real Time Data!
             </div>
@@ -55,11 +61,6 @@
 
 
 
-
-
-
-
-<!-- ########## BAR CHART ########## -->
 
 
 <!-- <div class="content">
