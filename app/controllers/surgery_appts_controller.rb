@@ -39,15 +39,13 @@ class SurgeryApptsController < ApplicationController
     @surgery_appt = SurgeryAppt.new(surgery_appt_params)
       if @surgery_appt.save
         # redirect_to surgery_appts_path
-        redirect_to root_path, notice: "New Surgery Appointment Created!"
-
-        SurgeryType.find(@surgery_appt.surgery_type_id).surgery_recipe_reqs.each do |req|
-          supply_item = req.supply_list_id
-          ActualRecipeReq.create(
-            qty:req.qty,
-            supply_list_id:supply_item,
-            surgery_appt_id:@surgery_appt.id)
-          end
+        # @surgery_appt.check_stock
+        status = @surgery_appt.check_stock
+        if status.include?(false)
+        redirect_to root_path, notice: "#{status} New Surgery Appointment Created!"
+        else
+          redirect_to root_path, notice: "New Surgery Appointment Created!"
+        end
         else
           # redirect_to root_path
       end
