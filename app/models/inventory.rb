@@ -14,7 +14,10 @@ class Inventory < ApplicationRecord
   def demand
     qty = 0
     item_number = self.supply_list_id
-    self.clinic.surgery_appts.where(complete:false).each do |appt|
+    # self.clinic.surgery_appts.where(complete:false).each do |appt|
+    self.clinic.surgery_appts.each do |appt|
+      next unless appt.complete
+
       appt.surgery_type.surgery_recipe_reqs.where(supply_list_id:item_number).each do |req|
         qty += req.qty
       end
@@ -23,12 +26,14 @@ class Inventory < ApplicationRecord
   end
 
   def actual_consumed
+    # self.supply_list.actual_recipe_reqs.joins(:surgery_appts).where("surgery_appts.complete = ? and surgery_appts.clinic", true, self.clinic).sum(:qty)
+    # self.supply_list.actual_recipe_reqs & self.clinic.surgery_appts.where(complete: true).joins(:actual_recipe_reqs)
     qty = 0
     item_number = self.supply_list_id
     self.clinic.surgery_appts.where(complete:true).each do |appt|
       appt.actual_recipe_reqs.where(supply_list_id:item_number).each do |req|
         qty += req.qty
-      en
+      end
     end
     qty
   end
