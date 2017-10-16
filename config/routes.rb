@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'page#index'
   get '/home' => 'page#home', as: 'home'
   post 'home' => 'sessions#create'
-  post 'home' => 'users#new'
+  get 'home' => 'users#new'
 
 
 

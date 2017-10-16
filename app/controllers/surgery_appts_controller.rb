@@ -81,7 +81,7 @@ class SurgeryApptsController < ApplicationController
   def destroy
     @surgery_appt.destroy
     respond_to do |format|
-      format.html { redirect_to surgery_appts_url, notice: 'Surgery appt was successfully destroyed.' }
+      format.html { redirect_to surgery_appts_url, notice: 'Surgery appt was successfully cancelled!.' }
       format.json { head :no_content }
     end
   end
