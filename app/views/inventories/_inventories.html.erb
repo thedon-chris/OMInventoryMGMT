@@ -27,7 +27,7 @@
 
 
               <tbody>
-                <% @inventories.each do |inventory| %>
+                <% @inventories.includes(:supply_list, clinic: {surgery_appts: :surgery_type}).each do |inventory| %>
                   <tr>
                     <td><%= inventory.qty %></td>
                     <td><%= inventory.clinic.clinic_name %></td>
