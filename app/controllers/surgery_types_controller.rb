@@ -19,7 +19,9 @@ class SurgeryTypesController < ApplicationController
 
   # GET /surgery_types/1/edit
   def edit
-    @surgery_recipe_reqs = @surgery_type.surgery_recipe_reqs
+    # @surgery_recipe_reqs = @surgery_type.surgery_recipe_reqs
+    # @surgery_recipe_reqs = SurgeryRecipeReq.all
+    @surgery_recipe_reqs = SurgeryRecipeReq.where(surgery_type:params[:id])
   end
 
   # POST /surgery_types
@@ -41,10 +43,19 @@ class SurgeryTypesController < ApplicationController
   # PATCH/PUT /surgery_types/1
   # PATCH/PUT /surgery_types/1.json
   def update
+
     @surgery_type.surgery_recipe_reqs
-    @surgery_type.surgery_recipe_reqs.where(supply_list_id: params[:id]).each do |srr|
-      srr.update!(qty: params[:surgery_recipe_req][:qty])
-    end
+      respond_to do |format|
+        if @surgery_type.update(surgery_type_params)
+          redirect_to root_path
+        else
+            format.html { render :edit }
+            format.json { render json: @surgery_type.errors, status: :unprocessable_entity }
+        end
+      end
+    # @surgery_type.surgery_recipe_reqs.where(supply_list_id: params[:id]).each do |srr|
+    #   srr.update!(qty: params[:surgery_recipe_req][:qty])
+    # end
   end
 
     ### OLD UPDATE

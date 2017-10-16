@@ -1,3 +1,5 @@
+<%#= form_with(model: @surgery_recipe_reqs, local: true, data: { remote: false }, method: 'put', class: "") do |form| %>
+
 <div class="content">
   <div class="container-fluid">
     <div class="row">
@@ -20,17 +22,17 @@
               <tbody>
                 <div class="col-md-12">
                   <div class="form-group label-floating is-empty">
-                    <% @surgery_recipe_reqs.each do |req| %>
                       <tr>
-                          <label class="control-label"><%#= form.label :surgery_type_id %></label>
-                          <%= form_with(model: req, local: true, data: { remote: false }, method: 'put', class: "req_#{req.id}") do |form| %>
-
-                          <td><%= form.object.supply_list.item_name %></td>
-                          <td><%= form.number_field :qty %></td>
-                          <td><%= submit_tag "Update", class: 'btn btn-primary' %></td>
-                        <% end %>
+                          <label class="control-label"></label>
+                          <!-- <% @surgery_type.my_reqs.each do |req| %> -->
+                          <td><%#= req.supply_list.item_name %></td>
+                          <td><%#= form.number_field :qty%></td>
+                          <td><%#= form.label :req %></td>
+                          <td><%#= form.number_field.:qty, id: :req %></td>
+                          <%#= form.number_field :qty, id: :inventory_qty %>
+                        </tr>
                       </tr>
-                    <% end %>
+                      <td><button type="submit" class="btn btn-primary pull-right btn-block" >Update Recipe!</button></td>
                   </div>
                 </div>
               </tbody>
@@ -41,7 +43,3 @@
     </div>
   </div>
 </div>
-
-<!-- form ajax form remote true ajax load remote true -->
-<!-- , data: { remote: true } -->
-<!-- data: { remote: true }, method: 'put', -->
