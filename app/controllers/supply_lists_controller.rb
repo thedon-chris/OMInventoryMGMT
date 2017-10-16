@@ -20,8 +20,10 @@ class SupplyListsController < ApplicationController
   # GET /supply_lists/1/edit
   def edit
     @inventories = Inventory.all
+    @surgery_types = SurgeryType.all
+    @surgery_appts = SurgeryAppt.all
 
-  @inv_item_names = []
+    @inv_item_names = []
     @inventories.each do |inventory|
       @inv_item_names << inventory.supply_list.item_name
     end
@@ -30,6 +32,18 @@ class SupplyListsController < ApplicationController
     @inventories.each do |inventory|
       @inv_item_qts << inventory.qty
     end
+
+    @surgery_types_names = []
+    @surgery_types.each do |st|
+      @surgery_types_names << st.surgery_name
+    end
+
+    @surgery_appts_count = []
+    @surgery_types.each do |type|
+      @surgery_appts_count << @surgery_appts.where(surgery_type_id:type).count
+    end
+
+
   end
 
   # POST /supply_lists
