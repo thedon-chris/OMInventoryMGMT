@@ -65,7 +65,30 @@
 
 ########## PIE CHART ##########
 
-<canvas id="chartjs-4" class="chartjs" width="1540" height="770" style="display: block; height: 385px; width: 770px;"></canvas>
+
+
+<div class="col-md-6">
+    <div class="card">
+        <div class="card-header card-chart" data-background-color="blank">
+            <div class="ct-chart" id="dailySalesChart">
+              <canvas id="chartjs-4" class="chartjs" width="1540" height="770" style="display: block; height: 385px; width: 770px;"></canvas>
+            </div>
+        </div>
+        <div class="card-content">
+            <h4 class="title">Daily Sales</h4>
+            <p class="category">
+                <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.</p>
+        </div>
+        <div class="card-footer">
+            <div class="stats">
+                <i class="material-icons">access_time</i> updated 4 minutes ago
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <canvas id="chartjs-4" class="chartjs" width="1540" height="770" style="display: block; height: 385px; width: 770px;"></canvas> -->
 
  <script>
    new Chart(document.getElementById("chartjs-4"),{
@@ -75,24 +98,6 @@
        "datasets": [{
            "label":"My First Dataset",
            "data":<%= @surgery_appts_count %>,
-           "backgroundColor":["rgb(255, 99, 132)","rgb(54, 162, 235)","rgb(255, 205, 86)"]
-       }]
-     }
-   });
- </script>
-
-########## LINE CHART ##########
-
-<canvas id="chartjs-4" class="chartjs" width="1540" height="770" style="display: block; height: 385px; width: 770px;"></canvas>
-
- <script>
-   new Chart(document.getElementById("chartjs-4"),{
-     "type":"doughnut",
-     "data": {
-       "labels":["Red", "Blue", "Green"],
-       "datasets": [{
-           "label":"My First Dataset",
-           "data":[1,2,3],
            "backgroundColor":["rgb(255, 99, 132)","rgb(54, 162, 235)","rgb(255, 205, 86)"]
        }]
      }
