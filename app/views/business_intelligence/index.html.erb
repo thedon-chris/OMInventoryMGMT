@@ -2,8 +2,27 @@
 
 
 <%= render 'bar_graph' %>
-<%= render 'donut_graph' %>
-<%= render 'line_graph' %>
+
+
+<!--  Stacked Chart goes here! -->
+<div class="col-md-8">
+    <div class="card">
+        <div class="card-header card-chart" data-background-color="">
+            <div class="ct-chart" id="completedTasksChart">
+              <%= render 'line_graph' %>
+            </div>
+        </div>
+        <div class="card-content">
+            <h4 class="title">Surgery Types and Appointments</h4>
+            <p class="category">Which Procedure Brings More Appointments?</p>
+        </div>
+        <div class="card-footer">
+            <div class="stats">
+                <i class="material-icons">access_time</i> Real Time Data!
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
@@ -13,9 +32,34 @@
 
 
 
+<!-- Donut Graph goes here! -->
+<div class="col-md-8">
+    <div class="card">
+        <div class="card-header card-chart" data-background-color="">
+            <div class="ct-chart" id="completedTasksChart">
+              <%= render 'donut_graph' %>
+            </div>
+        </div>
+        <div class="card-content">
+            <h4 class="title">Surgery Types and Appointments</h4>
+            <p class="category">Which Procedure Brings More Appointments?</p>
+        </div>
+        <div class="card-footer">
+            <div class="stats">
+                <i class="material-icons">access_time</i> Real Time Data!
+            </div>
+        </div>
+    </div>
+</div>
 
 
-########## BAR CHART ##########
+
+
+
+
+
+
+<!-- ########## BAR CHART ########## -->
 
 
 <!-- <div class="content">
