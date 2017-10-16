@@ -9,47 +9,154 @@
 # Inventory.create(qty:1000, supply_list_id:1, clinic_id:1)
 # ActualRecipeReq.create(qty:6, surgery_appt_id:1, supply_list_id:1)
 
-
-SupplyList.create(item_name: 'IV-set')
-SupplyList.create(item_name: 'Stryker-Pad')
-SupplyList.create(item_name: 'Gown')
-SupplyList.create(item_name: 'Oxygen-tubing')
-SupplyList.create(item_name: 'Suction-tubing')
-SupplyList.create(item_name: 'Bite-block')
-SupplyList.create(item_name: 'Biopsy-forceps')
-SupplyList.create(item_name: 'Brush')
-SupplyList.create(item_name: 'Gloves')
-
+# User.create()
 
 Clinic.create(clinic_name: "South Miami Gastro")
 
-Inventory.create(qty: 500, clinic_id: 1, supply_list_id: 1 )
-Inventory.create(qty: 1000, clinic_id: 1, supply_list_id: 2 )
-Inventory.create(qty: 1000, clinic_id: 1, supply_list_id: 3 )
-Inventory.create(qty: 500, clinic_id: 1, supply_list_id: 4 )
-Inventory.create(qty: 500, clinic_id: 1, supply_list_id: 5 )
-Inventory.create(qty: 500, clinic_id: 1, supply_list_id: 6 )
-Inventory.create(qty: 500, clinic_id: 1, supply_list_id: 7 )
+# Low Movement
+SupplyList.create(item_name: 'Knee-Replacement')
+SupplyList.create(item_name: 'Hip-Replacement')
+SupplyList.create(item_name: 'Rotator-Cuff-Replacement')
+SupplyList.create(item_name: 'Shoulder-Cap-Replacement')
+SupplyList.create(item_name: 'Ankle-Replacement')
+
+# Low Movement
+Inventory.create(qty: 200, clinic_id: 1, supply_list_id: 1 )
+Inventory.create(qty: 200, clinic_id: 1, supply_list_id: 2 )
+Inventory.create(qty: 200, clinic_id: 1, supply_list_id: 3 )
+Inventory.create(qty: 200, clinic_id: 1, supply_list_id: 4 )
+Inventory.create(qty: 200, clinic_id: 1, supply_list_id: 5 )
+
+#High Movement
+# starts at 6
+SupplyList.create(item_name: 'Sutures-Absorbable')
+SupplyList.create(item_name: 'Sutures-Non-Absorbable')
+SupplyList.create(item_name: 'Orthopedic-Nail')
+SupplyList.create(item_name: 'Gowns')
+
+#High Movement
+Inventory.create(qty: 1000, clinic_id: 1, supply_list_id: 6 )
+Inventory.create(qty: 1000, clinic_id: 1, supply_list_id: 7 )
 Inventory.create(qty: 500, clinic_id: 1, supply_list_id: 8 )
 Inventory.create(qty: 500, clinic_id: 1, supply_list_id: 9 )
 
 
-SurgeryType.create(surgery_name: "Endoscopy")
-SurgeryType.create(surgery_name: "Colonoscopy")
-SurgeryType.create(surgery_name: "Enteroscopy")
-SurgeryType.create(surgery_name: "Upper-Endoscopy")
-SurgeryType.create(surgery_name: "Ostomy-Exam")
+#Surgery Type Seeds
+SurgeryType.create(surgery_name: "Knee-Replacement-Surgery")
+SurgeryType.create(surgery_name: "Hip-Replacement-Surgery")
+SurgeryType.create(surgery_name: "Rotator-Cuff-Replacement")
+SurgeryType.create(surgery_name: "Shoulder-Cap-Replacement")
+SurgeryType.create(surgery_name: "Ankle-Replacement")
+
+SurgeryRecipeReq.create(qty:2, supply_list_id:1, surgery_type_id:1)
+SurgeryRecipeReq.create(qty:15, supply_list_id:6, surgery_type_id:1)
+SurgeryRecipeReq.create(qty: 15, supply_list_id:7, surgery_type_id:1)
+SurgeryRecipeReq.create(qty:5, supply_list_id:9, surgery_type_id:1)
+SurgeryRecipeReq.create(qty:4, supply_list_id:8, surgery_type_id:1)
+
+SurgeryRecipeReq.create(qty:1, supply_list_id:2, surgery_type_id:2)
+SurgeryRecipeReq.create(qty:20, supply_list_id:6, surgery_type_id:2)
+SurgeryRecipeReq.create(qty: 20, supply_list_id:7, surgery_type_id:2)
+SurgeryRecipeReq.create(qty:5, supply_list_id:9, surgery_type_id:2)
+SurgeryRecipeReq.create(qty:4, supply_list_id:8, surgery_type_id:2)
+
+SurgeryRecipeReq.create(qty:2, supply_list_id:3, surgery_type_id:3)
+SurgeryRecipeReq.create(qty:15, supply_list_id:6, surgery_type_id:3)
+SurgeryRecipeReq.create(qty: 15, supply_list_id:7, surgery_type_id:3)
+SurgeryRecipeReq.create(qty:5, supply_list_id:9, surgery_type_id:3)
+SurgeryRecipeReq.create(qty:4, supply_list_id:8, surgery_type_id:3)
+
+SurgeryRecipeReq.create(qty:2, supply_list_id:4, surgery_type_id:4)
+SurgeryRecipeReq.create(qty:15, supply_list_id:6, surgery_type_id:4)
+SurgeryRecipeReq.create(qty: 15, supply_list_id:7, surgery_type_id:4)
+SurgeryRecipeReq.create(qty:5, supply_list_id:9, surgery_type_id:4)
+SurgeryRecipeReq.create(qty:4, supply_list_id:8, surgery_type_id:4)
+
+SurgeryRecipeReq.create(qty:2, supply_list_id:5, surgery_type_id:5)
+SurgeryRecipeReq.create(qty:15, supply_list_id:6, surgery_type_id:5)
+SurgeryRecipeReq.create(qty: 15, supply_list_id:7, surgery_type_id:5)
+SurgeryRecipeReq.create(qty:5, supply_list_id:9, surgery_type_id:5)
+SurgeryRecipeReq.create(qty:4, supply_list_id:8, surgery_type_id:5)
+
+SurgeryRecipeReq.create(qty:2, supply_list_id:6, surgery_type_id:6)
+SurgeryRecipeReq.create(qty:15, supply_list_id:6, surgery_type_id:6)
+SurgeryRecipeReq.create(qty: 15, supply_list_id:7, surgery_type_id:6)
+SurgeryRecipeReq.create(qty:5, supply_list_id:9, surgery_type_id:6)
+SurgeryRecipeReq.create(qty:4, supply_list_id:8, surgery_type_id:6)
 
 
-5.times do |i|
-  i+=1
-  SurgeryRecipeReq.create(qty:4, supply_list_id:1, surgery_type_id:i)
-  SurgeryRecipeReq.create(qty:100, supply_list_id:2, surgery_type_id:i)
-  SurgeryRecipeReq.create(qty:50, supply_list_id:3, surgery_type_id:i)
-  SurgeryRecipeReq.create(qty:10, supply_list_id:4, surgery_type_id:i)
-  SurgeryRecipeReq.create(qty:10, supply_list_id:5, surgery_type_id:i)
-  SurgeryRecipeReq.create(qty:10, supply_list_id:6, surgery_type_id:i)
+# l=0
+# 25.times do
+#   s+=1
+#   # s+=1
+#   5.times do
+#     SurgeryAppt.create(surgery_date: "2017-10-#{l}", clinic_id:1, surgery_type_id: "#{rand(1..5)}")
+#   end
+# end
+#
+
+
+i = 0
+25.times do
+  i +=1
+  3.times do
+  SurgeryAppt.create(surgery_date: "2017-11-#{i}", clinic_id:1, surgery_type_id: "#{rand(1..5)}")
+  end
 end
+#
+
+s = 0
+25.times do
+  s +=1
+  4.times do
+  SurgeryAppt.create(surgery_date: "2017-10-#{s}", clinic_id:1, surgery_type_id: "#{rand(1..5)}")
+  end
+end
+
+
+SurgeryAppt.all.where('surgery_date < ?', Date.yesterday).each do |close|
+  close.update(complete:true)
+end
+
+
+
+
+
+
+# year, month, day = 2017, 10, nil
+# dates = 5.times.map do
+#   5.times.map do
+#     Time.new(year, month, rand(1..31))
+#   end.sort
+# end
+# dates.each do |group|
+#   group.each do |date|
+#     SurgeryAppt.create(surgery_date: date, clinic_id: 1, surgery_type_id: rand(1..5))
+#   end
+# end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 5.times do |i|
+#   i+=1
+#   SurgeryRecipeReq.create(qty:4, supply_list_id:1, surgery_type_id:i)
+#   SurgeryRecipeReq.create(qty:100, supply_list_id:2, surgery_type_id:i)
+#   SurgeryRecipeReq.create(qty:50, supply_list_id:3, surgery_type_id:i)
+#   SurgeryRecipeReq.create(qty:10, supply_list_id:4, surgery_type_id:i)
+#   SurgeryRecipeReq.create(qty:10, supply_list_id:5, surgery_type_id:i)
+#   SurgeryRecipeReq.create(qty:10, supply_list_id:6, surgery_type_id:i)
+# end
 
 
 # s=0
@@ -58,16 +165,6 @@ end
 #   SurgeryAppt.create(surgery_date: "2017-10-14", clinic_id:1, surgery_type_id: s)
 # end
 
-s=0
-l=14
-25.times do
-  l+=1
-  # s+=1
-  5.times do
-    SurgeryAppt.create(surgery_date: "2017-10-#{l}", clinic_id:1, surgery_type_id: "#{rand(1..4)}")
-  end
-  # puts "#{s} appointments created"
-end
 
 
 # i=0
@@ -91,3 +188,22 @@ end
 # SupplyList.create(qty: 100, clinic_id: 1,supply_list_id: i )
 # SupplyList.create(qty: 100, clinic_id: 1,supply_list_id: i )
 # SupplyList.create(qty: 100, clinic_id: 1,supply_list_id: i )
+
+
+
+# SupplyList.create(item_name: 'Femoral Nail')
+# SupplyList.create(item_name: 'Hip Screws')
+# SupplyList.create(item_name: 'Ankle Screws')
+# SupplyList.create(item_name: 'Ankle Screws')
+# SupplyList.create(item_name: 'Shoulder Screws')
+# SupplyList.create(item_name: 'Knee Screws')
+# SupplyList.create(item_name: 'Ankle Screws')
+# SupplyList.create(item_name: 'IV-set')
+# SupplyList.create(item_name: 'Stryker-Pad')
+# SupplyList.create(item_name: 'Gown')
+# SupplyList.create(item_name: 'Oxygen-tubing')
+# SupplyList.create(item_name: 'Suction-tubing')
+# SupplyList.create(item_name: 'Bite-block')
+# SupplyList.create(item_name: 'Biopsy-forceps')
+# SupplyList.create(item_name: 'Brush')
+# SupplyList.create(item_name: 'Scalpel')
