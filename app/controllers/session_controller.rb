@@ -9,12 +9,11 @@ class SessionController < ApplicationController
     user = User.find_by_email(params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      redirect_to root_path
-      puts "Success"
+      redirect_to root_path,
+      notice: "Successfull Log In!"
     else
-      render :new
-      puts "Fail"
-
+      redirect_to home_path,
+      notice: "Log In Failed!"
     end
   end
 
