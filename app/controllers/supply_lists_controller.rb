@@ -43,6 +43,16 @@ class SupplyListsController < ApplicationController
       @surgery_appts_count << @surgery_appts.where(surgery_type_id:type).count
     end
 
+    @projected_demand = []
+    @inventories.each do |x|
+      @projected_demand << x.expiration(6, 'month')
+    end
+
+    @actual_consump = []
+    @surgery_appts.each do |x|
+      @actual_consump << x.actual_consumed
+    end
+
 
   end
 
