@@ -10,18 +10,21 @@
           <div class="card-content table-responsive">
             <table class="table table-hover">
               <thead class="text-primary">
-                  <th>Surgery name</th>
+                <th>Surgery Date</th>
+                <th>Surgery name</th>
+                <th>Cancel Appointment</th>
+                <th>Complete Surgery <th>
+
 
               </thead>
               <tbody>
                 <% @surgery_appts.each do |surgery_appt| %>
                   <tr>
                     <td><%= link_to surgery_appt.surgery_date, surgery_appt  %></td>
-                    <td><%= surgery_appt.clinic.clinic_name %></td>
                     <td><%= link_to surgery_appt.surgery_type.surgery_name, edit_surgery_appt_path(surgery_appt)  %></td>
-                    <td><%= link_to 'Delete', surgery_appt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    <td><%= link_to 'Cancel Appointment', surgery_appt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                     <% unless surgery_appt.complete %>
-                      <td><%= link_to 'Complete', completed_path(surgery_appt.id) %></td>
+                      <td><%= link_to 'Complete Appointment', completed_path(surgery_appt.id) %></td>
                     <% end %>
                   </tr>
                 <% end %>
