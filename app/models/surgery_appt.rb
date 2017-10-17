@@ -7,6 +7,7 @@ class SurgeryAppt < ApplicationRecord
 
 
   after_create :sequence, :check_stock
+  
   def sequence
     SurgeryType.find(self.surgery_type_id).surgery_recipe_reqs.each do |req|
       supply_item = req.supply_list_id
@@ -28,11 +29,11 @@ class SurgeryAppt < ApplicationRecord
       state = our_inv.qty < our_inv.expiration(1, "week")
       arr << state
       if state == true
-        # arr2 << "#{inv.supply_list.item_name} is low on stock! '/n'"
+        arr2 << "#{inv.supply_list.item_name} is low on stock! "
       end
     end
-    arr
-    # arr2
+    # arr
+    arr2
   end
   # SurgeryAppt.first.check_stock
 
