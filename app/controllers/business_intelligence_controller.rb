@@ -26,7 +26,7 @@ class BusinessIntelligenceController < ApplicationController
 
     @projected_demand = []
     @inventories.each do |x|
-      @projected_demand << x.expiration(6, 'month')
+      @projected_demand << x.expiration(1, 'week')
     end
 
     @actual_consump = []
@@ -142,7 +142,7 @@ class BusinessIntelligenceController < ApplicationController
       @actual_consump << x.actual_consumed
     end
   end
-  
+
 end
 
 
