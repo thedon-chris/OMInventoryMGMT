@@ -33,6 +33,12 @@ class BusinessIntelligenceController < ApplicationController
     @inventories.each do |x|
       @actual_consump << x.actual_consumed
     end
+
+    @actual_consump2 = []
+    @inventories.each do |x|
+      @actual_consump2 << x.qty
+    end
+
   end
 
   def donut_graph
