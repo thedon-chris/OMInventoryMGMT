@@ -35,7 +35,8 @@ var barChartData = {
             responsive: true,
             scales: {
                 xAxes: [{
-                    stacked: true
+                    stacked: true,
+                    display: false,
                 }],
                 yAxes: [{
                     stacked: true
@@ -43,6 +44,8 @@ var barChartData = {
             }
         }
     });
+
+
 
    new Chart(document.getElementById("chartjs-4"),{
      "type":"doughnut",

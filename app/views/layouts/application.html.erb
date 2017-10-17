@@ -33,10 +33,18 @@
 
     <% if flash[:notice].present? %>
       <script>
+        <% if flash[:notice].is_a?(Array) %>
+          <% flash[:notice].each do |notice| %>
+            setTimeout(function(){
+              demo.showNotification('top','center', "<%= notice %>")
+            }, 300);
+          <% end %>
+        <% else %>
         setTimeout(function(){
           demo.showNotification('top','center', "<%= flash[:notice] %>")
         }, 300);
-        </script>
+      <% end %>
+      </script>
     <% end %>
 
 

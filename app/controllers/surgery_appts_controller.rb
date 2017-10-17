@@ -43,8 +43,9 @@ class SurgeryApptsController < ApplicationController
         # redirect_to surgery_appts_path
         # @surgery_appt.check_stock
         status = @surgery_appt.check_stock
-        if status.include?(false)
-        redirect_to root_path, notice: "#{status} New Surgery Appointment Created!"
+        if status.any?
+          status << "New Surgery Appointment Created!"
+          redirect_to root_path, notice: status
         else
           redirect_to root_path, notice: "New Surgery Appointment Created!"
         end
