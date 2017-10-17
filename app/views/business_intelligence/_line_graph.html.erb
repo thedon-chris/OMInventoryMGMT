@@ -4,9 +4,9 @@
 var barChartData = {
     "labels": '<%= @inv_item_names.join(" ") %>'.split(' '),
     "datasets": [{
-        "label": 'Actual Consumption',
+        "label": 'Inventory Stock',
         "backgroundColor": ["rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)"],
-        "data": <%= @actual_consump %>
+        "data": <%= @inv_item_qts %>
       },
       // {
       //   "label": 'Dataset 2',

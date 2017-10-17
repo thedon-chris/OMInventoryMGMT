@@ -874,6 +874,7 @@ h2.title {
     text-align: center;
     font-weight: 400;
     line-height: 30px;
+
 }
 
 .sidebar .logo-tim,
@@ -891,6 +892,7 @@ h2.title {
 .off-canvas-sidebar .logo-tim img {
     width: 60px;
     height: 60px;
+    background-image: 
 }
 
 .sidebar:after,
