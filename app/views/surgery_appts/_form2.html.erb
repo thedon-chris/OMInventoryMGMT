@@ -26,7 +26,7 @@
                               <!-- <form> -->
                                 <!-- this is the SurgeryAppt type field -->
                                 <div class="row">
-                                  <div class="col-md-6">
+                                  <div class="col-md-8">
                                     <div class="form-group label-floating is-empty">
                                       <label class="control-label"><%#= form.label :surgery_type_id %></label>
                                       <%= form.select :clinic_id, options_from_collection_for_select(Clinic.all, 'id', 'clinic_name'), {}, {class: "form-control hidden"} %>
@@ -36,7 +36,7 @@
                                   </div>
                                 </div>
                                 <div class="row">
-                                  <div class="col-md-6">
+                                  <div class="col-md-8">
                                     <div class="form-group label-floating is-empty">
                                       <label class="control-label"><%#= form.label :surgery_type_id %></label>
                                       <%= form.select :surgery_type_id, options_from_collection_for_select(SurgeryType.all, 'id', 'surgery_name'), {}, {class: "form-control"} %>
@@ -45,14 +45,14 @@
                                   </div>
                                 </div>
                                 <div class="row">
-                                  <div class="col-md-4">
+                                  <div class="col-md-8">
                                     <div class="form-group label-floating is-empty">
                                       <label class="control-label"><%#= form.label :surgery_type_id %></label>
                                       <%= form.date_select(:surgery_date, {}, {class: "form-control"}) %>
                                       <span class="material-input"></span>
                                     </div>
                                   </div>
-                                  <div class="col-md-4">
+                                  <!-- <div class="col-md-4">
                                       <div class="form-group label-floating">
                                           <label class="control-label">Day</label>
                                           <input type="text" class="form-control">
@@ -63,7 +63,7 @@
                                           <label class="control-label">Year</label>
                                           <input type="text" class="form-control">
                                       </div>
-                                  </div>
+                                  </div> -->
                                 </div>
                                 <!-- <div class="row">
                                       <div class="col-md-12">
