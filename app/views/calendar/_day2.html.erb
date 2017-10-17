@@ -12,14 +12,16 @@
           </div>
           <br>
 
-          <%= calendar number_of_days: 1, events: @surgery_appt do |date, surgery| %>
-            <%= date %>
-            <% surgery.each do |surgery| %>
-              <div>
-                <%= link_to surgery.name, surgery %>
-              </div>
+          <div class="day-calendar">
+            <%= calendar number_of_days: 1, events: @surgery_appt do |date, surgery| %>
+              <%= date %>
+              <% surgery.each do |surgery| %>
+                <div>
+                  <%= link_to surgery.name, surgery %>
+                </div>
+              <% end %>
             <% end %>
-          <% end %>
+          </div>
 
         </div>
       </div>
