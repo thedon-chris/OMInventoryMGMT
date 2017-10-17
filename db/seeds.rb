@@ -11,7 +11,7 @@
 
 # User.create()
 
-Clinic.create(clinic_name: "South Miami Gastro")
+Clinic.create(clinic_name: "JJ Watts' Orthopedic Surgeon")
 
 # Low Movement
 SupplyList.create(item_name: 'Knee-Replacement')
@@ -42,8 +42,8 @@ Inventory.create(qty: 500, clinic_id: 1, supply_list_id: 9 )
 
 
 #Surgery Type Seeds
-SurgeryType.create(surgery_name: "Knee-Replacement-Surgery")
-SurgeryType.create(surgery_name: "Hip-Replacement-Surgery")
+SurgeryType.create(surgery_name: "Tibial-Fracture-Repair")
+SurgeryType.create(surgery_name: "Hip-Replacement")
 SurgeryType.create(surgery_name: "Rotator-Cuff-Replacement")
 SurgeryType.create(surgery_name: "Shoulder-Cap-Replacement")
 SurgeryType.create(surgery_name: "Ankle-Replacement")
@@ -103,7 +103,7 @@ i = 0
   SurgeryAppt.create(surgery_date: "2017-11-#{i}", clinic_id:1, surgery_type_id: "#{rand(1..5)}")
   end
 end
-#
+
 
 s = 0
 25.times do
@@ -112,7 +112,6 @@ s = 0
   SurgeryAppt.create(surgery_date: "2017-10-#{s}", clinic_id:1, surgery_type_id: "#{rand(1..5)}")
   end
 end
-
 
 SurgeryAppt.all.where('surgery_date < ?', Date.yesterday).each do |close|
   close.update(complete:true)
