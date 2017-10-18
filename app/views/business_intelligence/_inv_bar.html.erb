@@ -1,15 +1,12 @@
-<canvas id="canvas-sam" style="display: block; width: 1065px; height: 532px;" width="1065" height="532" class="chartjs-render-monitor"></canvas>
+<canvas id="canvas-sam2" style="display: block; width: 1065px; height: 532px;" width="1065" height="532" class="chartjs-render-monitor"></canvas>
 
 <script>
 var barChartData = {
     "labels": '<%= @inv_item_names.join(" ") %>'.split(' '),
     "datasets": [{
-        "label": 'Inventory Stock',
-        "backgroundColor": ["rgb(79, 219, 51)", "rgb(79, 219, 51)", "rgb(79, 219, 51)", "rgb(79, 219, 51)", "rgb(79, 219, 51)", "rgb(79, 219, 51)", "rgb(79, 219, 51)", "rgb(79, 219, 51)", "rgb(79, 219, 51)"],
-        // "backgroundColor": ["rgb(124,252,0)", "rgb(124,252,0)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)"],
-        // rgb(124,252,0)
-
-        "data": <%= @inv_item_qts %>
+        "label": 'Actual Consumption',
+        "backgroundColor": ["rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)", "rgb(255, 99, 132)"],
+        "data": <%= @actual_consump %>
       },
       // {
       //   "label": 'Dataset 2',
@@ -18,12 +15,12 @@ var barChartData = {
       // },
       {
         "label": 'Projected Demand',
-        "backgroundColor": ["rgb(246, 63, 26)", "rgb(246, 63, 26)", "rgb(246, 63, 26)", "rgb(246, 63, 26)", "rgb(246, 63, 26)", "rgb(246, 63, 26)", "rgb(246, 63, 26)", "rgb(246, 63, 26)", "rgb(246, 63, 26)"],
+        "backgroundColor": ["rgb(255, 205, 86)", "rgb(255, 205, 86)", "rgb(255, 205, 86)", "rgb(255, 205, 86)", "rgb(255, 205, 86)", "rgb(255, 205, 86)", "rgb(255, 205, 86)", "rgb(255, 205, 86)", "rgb(255, 205, 86)"],
         "data": <%= @projected_demand %>
       }]
 
 };
-   new Chart(document.getElementById("canvas-sam"), {
+   new Chart(document.getElementById("canvas-sam2"), {
         "type": 'bar',
         "data": barChartData,
         "options": {
