@@ -17,7 +17,7 @@
                   <th>Clinic</th>
                   <th>Supply list</th>
                   <th>Out of Stock</th>
-                  <th>Projected Demand</th>
+                  <!-- <th>Projected Demand</th> -->
                   <th>Demand for Next Week</th>
                   <th>Demand for Next Month</th>
                   <th>Demand for Next Year</th>
@@ -33,7 +33,7 @@
                     <td><%= inventory.clinic.clinic_name %></td>
                     <td><%= inventory.supply_list.item_name %></td>
                     <td class="out-of-stock"><%= inventory.out_of_stock %></td>
-                    <td><%= inventory.demand %></td>
+                    <!-- <td><%#= inventory.demand %></td> -->
                     <td><%= inventory.expiration(1, "week") %></td>
                     <td><%= inventory.expiration(3, "week") %></td>
                     <td><%= inventory.expiration(1, "year") %></td>

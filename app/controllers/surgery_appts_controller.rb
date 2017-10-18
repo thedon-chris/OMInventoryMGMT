@@ -63,12 +63,18 @@ class SurgeryApptsController < ApplicationController
   # PATCH/PUT /surgery_appts/1.json
   def update
       if @surgery_appt.update(surgery_appt_params)
-        redirect_to root_path, notice: 'Surgery appt was successfully updated.'
-
+        status = @surgery_appt.check_stock
+        if status.any?
+          status << "Appointment Completed!"
+          redirect_to root_path, notice: status
+        else
+          redirect_to root_path, notice: "New Surgery Appointment Created!"
+        end
         if @surgery_appt.complete # the surgery is not yet complete
           # TODO: I wish I learned how to use accepts_nested_attributes_for
           surgery_recipe_reqs_hsh = params[:surgery_appt][:surgery_recipe_req]
           @surgery_appt.complete_surgery(surgery_recipe_reqs_hsh)
+          # redirect_to surgery_appt_path
           #take the acutal reqs
           #go subtract from inventory
         end
