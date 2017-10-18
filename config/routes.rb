@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get 'business_intelligence/line_graph'
 
+  get 'business_intelligence/inv_bar'
+
   get 'business_intelligence/bar_graph'
 
   root 'page#index'
