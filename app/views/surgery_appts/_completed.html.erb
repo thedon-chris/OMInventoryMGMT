@@ -22,7 +22,7 @@
                 <tbody>
                   <div class="col-md-12">
                     <div class="form-group label-floating is-empty">
-                    <p>Check the box to complete the Appointment</p>  <%= form.check_box :complete %>
+                    <p>Check the box to complete the Appointment  <%= form.check_box :complete %></p>
                         <% @surgery_appt.surgery_type.surgery_recipe_reqs.each do |req| %>
                           <%= form_with(model: @surgery_appt, local: true) do |form| %>
                             <%= form.fields_for req do |fa| %>
