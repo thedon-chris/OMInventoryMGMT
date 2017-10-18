@@ -17,7 +17,6 @@ class Inventory < ApplicationRecord
     # self.clinic.surgery_appts.where(complete:false).each do |appt|
     self.clinic.surgery_appts.each do |appt|
       next unless appt.complete
-
       appt.surgery_type.surgery_recipe_reqs.where(supply_list_id:item_number).each do |req|
         qty += req.qty
       end
