@@ -74,11 +74,7 @@ class SurgeryApptsController < ApplicationController
           # TODO: I wish I learned how to use accepts_nested_attributes_for
           surgery_recipe_reqs_hsh = params[:surgery_appt][:surgery_recipe_req]
           @surgery_appt.complete_surgery(surgery_recipe_reqs_hsh)
-<<<<<<< HEAD
-          redirect_to root_path, notice: 'Surgery appt was successfully completed.'
-=======
-          # redirect_to surgery_appt_path
->>>>>>> 377cb734af92bf67ae86dc5d5b9cae6782149ea8
+
           #take the acutal reqs
           #go subtract from inventory
         end
